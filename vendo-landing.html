@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ═══ Font — non-blocking load (đưa lên đầu để trình duyệt fetch sớm nhất) ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- ═══ Primary SEO ═══ -->
+<title>Vendo — Phần mềm quản lý bán hàng miễn phí cho chủ shop</title>
+<meta name="description" content="Vendo giúp chủ shop mỹ phẩm, thời trang, tạp hóa quản lý bán hàng, kho, công nợ và báo cáo trên cả điện thoại lẫn máy tính. Freemium miễn phí mãi mãi, 1 tháng Plus miễn phí khi đăng ký.">
+<meta name="keywords" content="phần mềm quản lý bán hàng, quản lý cửa hàng, quản lý kho, phần mềm bán hàng miễn phí, app bán hàng, vendo, quản lý shop, phần mềm tính tiền">
+<meta name="author" content="Vendo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vendo.life/">
+
+<!-- ═══ Theme & Color ═══ -->
+<meta name="theme-color" content="#1E88FF">
+<meta name="color-scheme" content="light">
+<meta name="msapplication-TileColor" content="#1E88FF">
+
+<!-- ═══ Favicons — inline từ brand kit Vendo ═══ -->
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADDElEQVRYhcXWy28bVRTH8e+5cRonIa6dhkBdVKjkPhQEYgWUCiSoQN2GCAQbFuz4C9imFUhsuiliS7uBClUIsQDEopKXgABRmqhqCAopbpImcWs7zjSvew6LjIODO7YFxXMlP649o8+54zO/a6Fu5M5ZamNz9R0nOor4ozhNI4qIgiiIZ/d8+7PIudPweL9sYr/iti5MX89/wvi41kypvTl49u5JwX8qosOIrzv5P+N13ysiW9/j3NjU6ydv7hQQ4t+IaPf/i+/MZ7u6OH5t7NS8y52zVLjyTuEg+qjiL2ImcvBs9V0n+kEH8fB4j4gfc2HDdRzfPsfedog/FgsuCugzDqd748DD+ZCLEQenuDhxREm0iz+b7eXVXIaRwV6cg+lywFezS8xWA0Yy/ezrTWAot+6uMVEqcWO12hIXUeTQRwVrhu9JGO+fyDKay3CvUVhdIz9XZEM9YCAGGBN3Snw7V8DjI3FEca1Wfvq5/ZE4wCP9SV46sA+Rv3ER44nBFC8feLgpjvj6HmjEnxru4bXDg5F4bWT7khwa6NvBYfvx5GCabF8yEt+5AlEN12zl/xy51AO7cMQQjMcze5uGnGvW7UcyybYLyOzp3oXXXh9M9kTi4RWIvtUUa7sAqz3X4YhhLXImugec8lspaLuA0sZGAw7G8nrQNGfu3QPhb/blH4ttFzC9UmnAwZisLDfNmcYeqEu4K8Uyl35faInfDAJmqpXduBhXyossrFeahpxrFa/jP03x+cx8JF4IAvK35hrwq+UlLi/OtExYyZ3/2drJ9qeH04w+luVYeoBuJ0xVynxd+JMbwQoj6RRDvT14U5bWA66WFymslVviiEdyF360+7Wx/JuNzcWJ1+0F8eDh/wFfjAtH9LYz0R9iwhHx1x3OPo4JR9AvBDM58tnlPKIvdBJHdEHXEocdItbVvfUGorMdxDcN3px8cbzqAK6NnZqHzROI/64TKzd4ZeL4e3mArlqkFi9dXCmOHD0/tP+haRFNidMBxPffJ/yOiP9F0A91PfHW5PNnpmruX00P/1Xar9WWAAAAAElFTkSuQmCC">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221024%22%20height%3D%221024%22%20viewBox%3D%220%200%201024%201024%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231E88FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232ECC71%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221024%22%20height%3D%221024%22%20rx%3D%22229%22%20fill%3D%22url%28%23bg%29%22/%3E%3Cg%20transform%3D%22translate%28211.63%2C305.49%29%20scale%281.8773%29%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22lcvendo-icon-gradient%22%3E%3Ccircle%20cx%3D%22110.0%22%20cy%3D%22110.0%22%20r%3D%22100.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle%20cx%3D%22110.0%22%20cy%3D%22110.0%22%20r%3D%22100.0%22%20fill%3D%22%23FFFFFF%22/%3E%3Ccircle%20cx%3D%22210.0%22%20cy%3D%22110.0%22%20r%3D%22100.0%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.55%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+
+<!-- ═══ Open Graph (Facebook / Zalo / LinkedIn) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vendo">
+<meta property="og:url" content="https://vendo.life/">
+<meta property="og:title" content="Vendo — Phần mềm quản lý bán hàng miễn phí cho chủ shop">
+<meta property="og:description" content="Quản lý bán hàng, kho, công nợ và báo cáo trên cả điện thoại lẫn máy tính. Freemium miễn phí mãi mãi — không cần thẻ tín dụng.">
+<meta property="og:image" content="https://vendo.life/og-image.jpg">
+<meta property="og:image:width" content="1731">
+<meta property="og:image:height" content="909">
+<meta property="og:image:alt" content="Vendo — Phần mềm quản lý bán hàng">
+<meta property="og:locale" content="vi_VN">
+
+<!-- ═══ Twitter / X Card ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@vendoapp">
+<meta name="twitter:title" content="Vendo — Phần mềm quản lý bán hàng miễn phí cho chủ shop">
+<meta name="twitter:description" content="Quản lý bán hàng, kho, công nợ và báo cáo trên cả điện thoại lẫn máy tính. Freemium miễn phí mãi mãi.">
+<meta name="twitter:image" content="https://vendo.life/og-image.jpg">
+<meta name="twitter:image:alt" content="Vendo — Phần mềm quản lý bán hàng">
+
+<!-- ═══ Structured Data — SoftwareApplication (Google) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Vendo",
+  "url": "https://vendo.life/",
+  "description": "Phần mềm quản lý bán hàng cho chủ shop Việt. Quản lý kho, công nợ, báo cáo trên điện thoại và máy tính.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS, Android, Web",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Freemium",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    {
+      "@type": "Offer",
+      "name": "Plus",
+      "price": "125000",
+      "priceCurrency": "VND",
+      "billingIncrement": "P1M"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "249000",
+      "priceCurrency": "VND",
+      "billingIncrement": "P1M"
+    }
+  ],
+  "inLanguage": "vi",
+  "availableOnDevice": ["Mobile", "Desktop"],
+  "downloadUrl": "https://shop.vendo.life/",
+  "softwareVersion": "1.0",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vendo",
+    "url": "https://vendo.life/"
+  }
+}
+</script>
+
+<!-- ═══ Structured Data — FAQPage (Google rich results) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Freemium có bị giới hạn thời gian không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Gói Freemium của Vendo miễn phí mãi mãi — không có ngày hết hạn. Bạn có thể dùng thoải mái với 50 sản phẩm và 1 nhân viên mà không mất đồng nào. Nâng cấp khi bạn thấy cần, không ai ép."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1 tháng Plus miễn phí hoạt động thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khi đăng ký tài khoản mới, bạn được tự động kích hoạt gói Plus đầy đủ trong 30 ngày đầu hoàn toàn miễn phí — không cần nhập thẻ tín dụng. Sau 30 ngày, bạn có thể chọn tiếp tục với Plus (125.000đ/tháng), nâng lên Pro, hoặc dùng tiếp Freemium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dữ liệu có bị mất khi đổi điện thoại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không bao giờ. Toàn bộ dữ liệu của bạn được lưu trên cloud và đồng bộ realtime giữa tất cả thiết bị. Đổi điện thoại, mở máy tính, hay thêm nhân viên mới — chỉ cần đăng nhập là có đủ dữ liệu ngay lập tức."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vendo chạy trên thiết bị nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vendo có app native cho iOS (iPhone/iPad) và Android, đồng thời có web app chạy trên trình duyệt của máy tính — Windows, Mac hay Linux đều được. Dữ liệu đồng bộ realtime giữa tất cả thiết bị."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nếu muốn hủy gói Plus có dễ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rất dễ. Bạn có thể hủy bất cứ lúc nào ngay trong phần cài đặt tài khoản, không cần liên hệ hỗ trợ. Sau khi hủy, bạn vẫn dùng Plus đến hết chu kỳ đã trả, rồi tự động về Freemium — dữ liệu vẫn được giữ nguyên."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --blue:#1E88FF; --blue-d:#1471E0; --blue-50:#E8F2FF; --blue-100:#CBE2FF;
+    --mint:#00C896; --mint-d:#00A37A; --mint-50:#E3FBF2;
+    --ink:#0C1B33; --ink-2:#34435E; --muted:#55647D;
+    --bg:#F5F8FF; --surface:#FFFFFF; --line:#E5ECF7;
+    --shadow-sm:0 2px 8px rgba(12,27,51,.06);
+    --shadow-md:0 12px 32px rgba(12,27,51,.10);
+    --shadow-lg:0 30px 70px rgba(12,27,51,.18);
+    --r:14px; --r-lg:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Be Vietnam Pro',system-ui,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:#0F5AAE;background:var(--blue-50);
+    padding:7px 14px;border-radius:999px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;
+    padding:15px 26px;border-radius:var(--r);border:0;transition:.18s ease;
+  }
+  .btn-primary{background:var(--blue-d);color:#fff;box-shadow:0 8px 22px rgba(0,122,255,.32)}
+  .btn-primary:hover{background:#0F5AAE;transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,122,255,.4)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .btn svg{width:18px;height:18px}
+  :focus-visible{outline:3px solid rgba(0,122,255,.5);outline-offset:2px;border-radius:6px}
+
+
+  /* ---- HERO BADGES & APP DOWNLOAD ---- */
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;margin-bottom:18px}
+  .hbadge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1.5px solid var(--line);padding:7px 13px;border-radius:999px}
+  .hbadge svg{color:var(--mint-d);flex:none}
+  .hbadge-green{background:var(--mint-50);border-color:#00C896;color:var(--mint-d)}
+  .hbadge-green svg{color:var(--mint-d)}
+  .app-dl{display:flex;gap:12px;flex-wrap:wrap}
+  .dl-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:12px;font-family:inherit;cursor:pointer;transition:.18s;text-decoration:none}
+  .dl-ios{background:#0C1B33;color:#fff}
+  .dl-ios:hover{background:#0C1B33;transform:translateY(-2px)}
+  .dl-android{background:#0C1B33;color:#fff}
+  .dl-android:hover{background:#0C1B33;transform:translateY(-2px)}
+  .dl-sub{font-size:10px;opacity:.75;line-height:1}
+  .dl-name{font-size:15px;font-weight:700;line-height:1.2;margin-top:2px}
+  /* ---- NAV ---- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(245,248,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.25s}
+  header.nav.scrolled{background:rgba(255,255,255,.9);border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center}
+  .logo-svg{height:34px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-weight:500;font-size:15px;color:var(--ink-2);transition:.15s}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-cta .btn{padding:11px 20px;font-size:15px}
+  .hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px;position:relative;width:42px;height:42px;flex:none}
+  .hamburger svg{width:26px;height:26px;color:var(--ink);transition:opacity .25s ease,transform .3s ease}
+  .hamburger .icon-close{position:absolute;top:8px;left:8px;opacity:0;transform:rotate(-90deg) scale(.5)}
+  .hamburger.open .icon-menu{opacity:0;transform:rotate(90deg) scale(.5)}
+  .hamburger.open .icon-close{opacity:1;transform:rotate(0deg) scale(1)}
+
+  /* ---- HERO ---- */
+  .hero{position:relative;padding:80px 0 90px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-220px;right:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,122,255,.14),transparent 65%);z-index:0}
+  .hero::after{content:"";position:absolute;bottom:-160px;left:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(0,200,150,.13),transparent 65%);z-index:0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:54px;font-weight:800;margin:22px 0 20px}
+  .hero h1 .hl{color:var(--blue);position:relative;white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;background:var(--mint-50);z-index:-1;border-radius:4px}
+  .hero p.lede{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{display:flex;align-items:center;gap:8px;margin-top:20px;font-size:14px;color:var(--muted)}
+  .hero-note svg{width:18px;height:18px;color:var(--mint-d)}
+
+  /* ---- DEVICE MOCKUP ---- */
+  .devices{position:relative;height:520px}
+  .phone{
+    position:absolute;right:18px;top:0;width:268px;height:520px;
+    background:#0C1B33;border-radius:42px;padding:13px;
+    box-shadow:var(--shadow-lg);z-index:2;
+    animation:float 6s ease-in-out infinite;
+  }
+  .phone .notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#0C1B33;border-radius:0 0 16px 16px;z-index:3}
+  .screen{width:100%;height:100%;background:var(--bg);border-radius:30px;overflow:hidden;display:flex;flex-direction:column}
+  .app-top{background:linear-gradient(135deg,var(--blue),#1471E0);color:#fff;padding:30px 18px 16px;border-radius:0 0 22px 22px}
+  .app-top .row{display:flex;align-items:center;justify-content:space-between}
+  .app-top .hi{font-size:12px;opacity:.85}
+  .app-top .name{font-size:16px;font-weight:700;margin-top:1px}
+  .app-top .avatar{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-weight:700;font-size:13px}
+  .rev-card{background:rgba(255,255,255,.16);border-radius:14px;padding:13px 14px;margin-top:14px}
+  .rev-card .lbl{font-size:11px;opacity:.85;display:flex;align-items:center;gap:5px}
+  .rev-card .val{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-top:2px}
+  .rev-card .up{font-size:11px;font-weight:600;color:#b8ffe7;display:inline-flex;align-items:center;gap:3px;margin-top:2px}
+  .app-body{padding:14px 16px;flex:1}
+  .chart{display:flex;align-items:flex-end;gap:7px;height:88px;margin:4px 0 14px}
+  .chart .bar{flex:1;background:#CBE2FF;border-radius:6px 6px 3px 3px;transition:height 1s cubic-bezier(.2,.7,.3,1)}
+  .chart .bar.peak{background:var(--mint)}
+  .sec-lbl{font-size:12px;font-weight:700;color:var(--ink-2);margin-bottom:9px}
+  .order{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+  .order .ic{width:32px;height:32px;border-radius:9px;background:var(--blue-50);display:grid;place-items:center;flex:none}
+  .order .ic svg{width:16px;height:16px;color:var(--blue)}
+  .order .meta{flex:1;min-width:0}
+  .order .meta .t{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .order .meta .s{font-size:10px;color:var(--muted)}
+  .order .amt{font-size:12px;font-weight:700;color:var(--mint-d)}
+
+  .laptop{position:absolute;left:0;top:96px;width:380px;z-index:1;animation:float 6s ease-in-out infinite .8s}
+  .laptop .lid{background:#0C1B33;border-radius:14px 14px 0 0;padding:10px 10px 0;box-shadow:var(--shadow-md)}
+  .laptop .browser{background:#fff;border-radius:8px 8px 0 0;overflow:hidden}
+  .browser .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#f3f6fc;border-bottom:1px solid var(--line)}
+  .browser .bar i{width:9px;height:9px;border-radius:50%;background:#d6dce8;display:block}
+  .browser .bar .url{margin-left:8px;font-size:10px;color:var(--muted);background:#fff;border-radius:6px;padding:3px 10px}
+  .browser-body{padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+  .stat-mini{background:var(--bg);border-radius:10px;padding:10px}
+  .stat-mini .k{font-size:9px;color:var(--muted)}
+  .stat-mini .v{font-size:15px;font-weight:800;color:var(--ink)}
+  .stat-mini .v.b{color:var(--blue)} .stat-mini .v.g{color:var(--mint-d)}
+  .browser-body .wide{grid-column:1/4;display:flex;align-items:flex-end;gap:6px;height:64px;background:var(--bg);border-radius:10px;padding:10px}
+  .browser-body .wide span{flex:1;background:var(--blue-100);border-radius:4px}
+  .browser-body .wide span:nth-child(odd){background:var(--blue)}
+  .laptop .base{height:11px;background:#0C1B33;border-radius:0 0 10px 10px;margin:0 -8px;box-shadow:0 16px 24px rgba(12,27,51,.2)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+  /* ---- TRUST BAR ---- */
+  .trust{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:38px 0;text-align:center}
+  .trust .num{font-size:38px;font-weight:800;color:var(--blue);letter-spacing:-.03em}
+  .trust .cap{font-size:14px;color:var(--ink-2);margin-top:2px;font-weight:500}
+  .badges{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding-bottom:34px}
+  .badges .lbl{font-size:13px;color:var(--muted);font-weight:500}
+  .badges .chip{font-size:13px;font-weight:600;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);padding:7px 16px;border-radius:999px}
+
+  /* ---- SECTION SHELL ---- */
+  section.block{padding:90px 0}
+  .head-center{text-align:center;max-width:680px;margin:0 auto 56px}
+  .head-center h2{font-size:40px;font-weight:800;margin:16px 0 14px}
+  .head-center p{font-size:18px;color:var(--ink-2)}
+
+  /* ---- PAIN ---- */
+  .pain{background:linear-gradient(180deg,var(--bg),#fff)}
+  .pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:840px;margin:0 auto}
+  .pain-card{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow-sm)}
+  .pain-card .x{width:34px;height:34px;flex:none;border-radius:10px;background:#FFEFEC;display:grid;place-items:center}
+  .pain-card .x svg{width:18px;height:18px;color:#FF6B4A}
+  .pain-card h3{font-size:16px;font-weight:700;margin-bottom:3px}
+  .pain-card p{font-size:14px;color:var(--muted)}
+  .pain-cta{text-align:center;margin-top:44px}
+  .pain-cta .lead{font-size:20px;font-weight:600;margin-bottom:18px}
+  .pain-cta .lead b{color:var(--blue)}
+
+  /* ---- FEATURES ---- */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px;transition:.22s;box-shadow:var(--shadow-sm)}
+  .feat:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--blue-100)}
+  .feat .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+  .feat .ic svg{width:26px;height:26px}
+  .feat .ic.b{background:var(--blue-50)} .feat .ic.b svg{color:var(--blue)}
+  .feat .ic.g{background:var(--mint-50)} .feat .ic.g svg{color:var(--mint-d)}
+  .feat h3{font-size:20px;font-weight:700;margin-bottom:9px}
+  .feat p{font-size:15px;color:var(--ink-2)}
+
+  /* ---- DUAL PLATFORM ---- */
+  .dual{background:#0C1B33;color:#fff;border-radius:32px;margin:0 24px;overflow:hidden}
+  .dual-inner{max-width:1112px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:64px 48px}
+  .dual .eyebrow{background:rgba(255,255,255,.12);color:#CBE2FF}
+  .dual h2{font-size:38px;font-weight:800;margin:18px 0 16px}
+  .dual p{font-size:17px;color:#aab8d0;margin-bottom:24px}
+  .dual ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .dual li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500}
+  .dual li svg{width:22px;height:22px;color:var(--mint);flex:none}
+  .dual-visual{display:flex;justify-content:center;gap:18px;align-items:flex-end}
+  .mini-phone{width:120px;height:240px;background:#0C1B33;border-radius:24px;padding:8px;flex:none}
+  .mini-phone .s{width:100%;height:100%;background:linear-gradient(180deg,#1E88FF,#0C1B33);border-radius:18px;display:flex;flex-direction:column;padding:14px 10px;gap:7px}
+  .mini-phone .s b{width:60%;height:8px;background:rgba(255,255,255,.5);border-radius:3px}
+  .mini-phone .s i{width:100%;height:34px;background:rgba(255,255,255,.14);border-radius:8px;display:block}
+  .mini-laptop{width:230px;flex:none}
+  .mini-laptop .scr{height:150px;background:#0C1B33;border-radius:12px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mini-laptop .scr i{background:rgba(255,255,255,.1);border-radius:7px;display:block}
+  .mini-laptop .scr i.tall{grid-row:span 2;background:rgba(0,200,150,.25)}
+  .mini-laptop .foot{height:8px;background:#0C1B33;border-radius:0 0 8px 8px;margin:0 18px}
+
+  /* ---- TESTIMONIALS ---- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;box-shadow:var(--shadow-sm)}
+  .stars{display:flex;gap:3px;margin-bottom:14px}
+  .stars svg{width:18px;height:18px;color:#FFB020}
+  .testi q{display:block;font-size:16px;color:var(--ink);font-style:normal;quotes:none;margin-bottom:22px;line-height:1.65}
+  .testi .who{display:flex;align-items:center;gap:12px}
+  .testi .who .av{width:46px;height:46px;border-radius:50%;background:var(--blue-50);color:var(--blue);display:grid;place-items:center;font-weight:700;font-size:16px}
+  .testi .who .nm{font-size:15px;font-weight:700}
+  .testi .who .rl{font-size:13px;color:var(--muted)}
+
+  /* ---- PRICING ---- */
+  .price{background:linear-gradient(180deg,#fff,var(--bg))}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:34px 30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
+  .plan.pop{border-color:var(--blue);box-shadow:0 24px 56px rgba(0,122,255,.18);position:relative;transform:scale(1.03)}
+  .plan .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:.03em}
+  .plan h3{font-size:20px;font-weight:700;margin-bottom:6px}
+  .plan .desc{font-size:14px;color:var(--muted);min-height:40px}
+  .plan .cost{margin:18px 0 6px;display:flex;align-items:baseline;gap:4px}
+  .plan .cost .n{font-size:40px;font-weight:800;letter-spacing:-.03em}
+  .plan .cost .u{font-size:15px;color:var(--muted)}
+  .plan .btn{width:100%;margin:20px 0 24px}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .plan li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink-2)}
+  .plan li svg{width:19px;height:19px;color:var(--mint-d);flex:none;margin-top:1px}
+
+  /* ---- FINAL CTA ---- */
+  .final{background:#1E88FF;color:#fff;border-radius:32px;margin:0 24px;text-align:center;padding:72px 32px;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;top:-100px;left:-60px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.1)}
+  .final::after{content:"";position:absolute;bottom:-120px;right:-40px;width:300px;height:300px;border-radius:50%;background:rgba(0,200,150,.25)}
+  .final h2{font-size:42px;font-weight:800;margin-bottom:16px;position:relative}
+  .final p{font-size:19px;opacity:.92;max-width:520px;margin:0 auto 30px;position:relative}
+  .final .btn{position:relative;background:#fff;color:var(--blue-d)}
+  .final .btn:hover{background:#f0f6ff;transform:translateY(-2px)}
+  .final .sub{margin-top:18px;font-size:14px;opacity:.85;position:relative}
+
+  /* ---- FOOTER ---- */
+  footer{padding:60px 0 34px;color:var(--ink-2)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  footer .logo{font-size:20px;margin-bottom:14px}
+  footer .blurb{font-size:14px;color:var(--muted);max-width:280px}
+  .foot-col h3{font-size:14px;font-weight:700;margin-bottom:16px;color:var(--ink)}
+  .foot-col a{display:block;font-size:14px;color:var(--ink-2);margin-bottom:11px;transition:.15s}
+  .foot-col a:hover{color:var(--blue)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;font-size:13px;color:var(--muted);flex-wrap:wrap;gap:12px}
+
+
+  /* ---- COMPARISON TABLE ---- */
+  .compare-table{border:1.5px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+  .ct-head{display:grid;grid-template-columns:1fr 200px 220px;background:var(--surface)}
+  .ct-col-feat{padding:18px 24px}
+  .ct-col{display:flex;align-items:center;justify-content:center;padding:18px 16px}
+  .ct-excel{background:#fef9f0;border-left:1.5px solid var(--line)}
+  .ct-vendo{background:var(--blue-50);border-left:1.5px solid var(--blue-100)}
+  .ct-label{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--ink-2)}
+  .ct-label-excel{color:#92400e}
+  .ct-label-vendo{color:var(--blue);flex-direction:column;gap:4px}
+  .ct-row{display:grid;grid-template-columns:1fr 200px 220px;border-top:1px solid var(--line)}
+  .ct-alt{background:var(--surface-subtle)}
+  .ct-footer{border-top:2px solid var(--line);background:var(--bg)}
+  .ct-feat{padding:16px 24px;font-size:15px;color:var(--ink-2);display:flex;align-items:center}
+  .ct-yes{color:var(--mint-d);font-size:20px;font-weight:800}
+  .ct-no{color:#ef4444;font-size:20px;font-weight:800}
+  @media(max-width:680px){
+    .ct-head,.ct-row{grid-template-columns:1fr 90px 100px}
+    .ct-feat{font-size:13px;padding:14px 14px}
+    .ct-col{padding:14px 10px}
+    .ct-label{font-size:12px}
+  }
+
+  /* ---- FAQ ---- */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+  .faq-item{border:1.5px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden;background:var(--surface);transition:.2s}
+  .faq-item.open{border-color:var(--blue-100);box-shadow:var(--shadow-sm)}
+  .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:none;border:0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;text-align:left}
+  .faq-q:hover{color:var(--blue)}
+  .faq-icon{width:20px;height:20px;flex:none;color:var(--muted);transition:transform .25s}
+  .faq-item.open .faq-icon{transform:rotate(180deg);color:var(--blue)}
+  .faq-a{display:none;padding:0 24px 20px}
+  .faq-a p{font-size:15px;color:var(--ink-2);line-height:1.7}
+  .faq-a strong{color:var(--ink)}
+  .faq-item.open .faq-a{display:block}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---- RESPONSIVE ---- */
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:42px}
+    .devices{height:480px;max-width:430px;margin:0 auto}
+    .dual-inner{grid-template-columns:1fr;gap:40px;padding:48px 32px}
+    .feat-grid,.testi-grid,.price-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .plan.pop{transform:none}
+  }
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .nav-cta .btn-ghost,.nav-cta .btn-primary{display:none}
+    .hamburger{display:block}
+    .hero h1{font-size:34px}
+    .hero p.lede{font-size:17px}
+    .head-center h2,.dual h2,.final h2{font-size:30px}
+    .trust-grid{grid-template-columns:1fr;gap:30px;padding:34px 0}
+    .pain-grid,.feat-grid,.testi-grid,.price-grid,.foot-grid{grid-template-columns:1fr}
+    .devices{height:430px}
+    .laptop{display:none}
+    .phone{position:relative;right:auto;margin:0 auto}
+    .dual-visual{flex-direction:column;align-items:center}
+    .final{padding:56px 24px}
+    .btn{width:100%}
+    .hero-actions{flex-direction:column}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+  #mobileMenu{display:none;position:fixed;inset:72px 0 auto 0;z-index:49;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);padding:16px 24px 24px}
+  #mobileMenu.open{display:block}
+  #mobileMenu a{display:block;padding:13px 0;font-size:17px;font-weight:500;border-bottom:1px solid var(--line)}
+  #mobileMenu .btn{width:100%;margin-top:18px;text-align:center;border-bottom:0}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="https://vendo.life" class="logo" aria-label="Vendo — trang chủ">
+      <svg class="logo-svg" viewBox="0 0 1070 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vendo">
+        <g transform="translate(50,50) translate(-10,-10)">
+          <defs><clipPath id="vlogo-nav"><circle cx="110" cy="110" r="100"/></clipPath></defs>
+          <circle cx="110" cy="110" r="100" fill="#1E88FF"/>
+          <circle cx="210" cy="110" r="100" fill="#00C896"/>
+          <circle cx="210" cy="110" r="100" fill="#00A37A" clip-path="url(#vlogo-nav)"/>
+        </g>
+        <g transform="translate(388,223.1)"><g fill="#1F2937">
+          <path transform="translate(0,0) scale(0.2,-0.2)" d="M300 129 440 554H589L384 0H214L10 554H160Z"/>
+          <path transform="translate(119.8,0) scale(0.2,-0.2)" d="M580 235H175Q180 175 217.0 141.0Q254 107 308 107Q386 107 419 174H570Q546 94 478.0 42.5Q410 -9 311 -9Q231 -9 167.5 26.5Q104 62 68.5 127.0Q33 192 33 277Q33 363 68.0 428.0Q103 493 166.0 528.0Q229 563 311 563Q390 563 452.5 529.0Q515 495 549.5 432.5Q584 370 584 289Q584 259 580 235ZM439 329Q438 383 400.0 415.5Q362 448 307 448Q255 448 219.5 416.5Q184 385 176 329Z"/>
+          <path transform="translate(243.2,0) scale(0.2,-0.2)" d="M597 325V0H457V306Q457 372 424.0 407.5Q391 443 334 443Q276 443 242.5 407.5Q209 372 209 306V0H69V554H209V485Q237 521 280.5 541.5Q324 562 376 562Q475 562 536.0 499.5Q597 437 597 325Z"/>
+          <path transform="translate(375.4,0) scale(0.2,-0.2)" d="M287 563Q341 563 390.0 539.5Q439 516 468 477V740H610V0H468V82Q442 41 395.0 16.0Q348 -9 286 -9Q216 -9 158.0 27.0Q100 63 66.5 128.5Q33 194 33 279Q33 363 66.5 428.0Q100 493 158.0 528.0Q216 563 287 563ZM322 440Q283 440 250.0 421.0Q217 402 196.5 365.5Q176 329 176 279Q176 229 196.5 191.5Q217 154 250.5 134.0Q284 114 322 114Q361 114 395.0 133.5Q429 153 449.0 189.5Q469 226 469 277Q469 328 449.0 364.5Q429 401 395.0 420.5Q361 440 322 440Z"/>
+          <path transform="translate(511,0) scale(0.2,-0.2)" d="M34 277Q34 362 71.5 427.0Q109 492 174.0 527.5Q239 563 319 563Q399 563 464.0 527.5Q529 492 566.5 427.0Q604 362 604 277Q604 192 565.5 127.0Q527 62 461.5 26.5Q396 -9 315 -9Q235 -9 171.0 26.5Q107 62 70.5 127.0Q34 192 34 277ZM460 277Q460 356 418.5 398.5Q377 441 317 441Q257 441 216.5 398.5Q176 356 176 277Q176 198 215.5 155.5Q255 113 315 113Q353 113 386.5 131.5Q420 150 440.0 187.0Q460 224 460 277Z"/>
+        </g></g>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Tính năng</a>
+      <a href="#platform">Đa nền tảng</a>
+      <a href="#testimonials">Khách hàng</a>
+      <a href="#pricing">Bảng giá</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí</a>
+      <button class="hamburger" id="burger" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="mobileMenu">
+  <a href="#features">Tính năng</a>
+  <a href="#platform">Đa nền tảng</a>
+  <a href="#testimonials">Khách hàng</a>
+  <a href="#pricing">Bảng giá</a>
+  <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí</a>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow"><span class="dot"></span>Phần mềm quản lý bán hàng</span>
+      <h1>Cả cửa hàng của bạn,<br><span class="hl">gọn trong một app</span></h1>
+      <p class="lede">Vendo giúp chủ shop mỹ phẩm, thời trang, tạp hóa… quản lý bán hàng, kho, công nợ và báo cáo — trên cả điện thoại lẫn máy tính. Bỏ Excel, không cần phần mềm cũ rườm rà.</p>
+      <div class="hero-actions">
+        <a href="https://shop.vendo.life" class="btn btn-primary">
+          Bắt đầu miễn phí
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#platform" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
+          Xem demo
+        </a>
+      </div>
+      <div class="hero-badges">
+        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Freemium miễn phí mãi mãi</span>
+        <span class="hbadge hbadge-green"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z" fill="currentColor"/></svg>1 tháng Plus miễn phí</span>
+        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Không cần thẻ tín dụng</span>
+      </div>
+      <div class="app-dl">
+        <a href="https://shop.vendo.life" class="dl-btn dl-ios">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.28-1.32-3.12-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><div class="dl-sub">Tải trên</div><div class="dl-name">App Store</div></div>
+        </a>
+        <a href="https://shop.vendo.life" class="dl-btn dl-android">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.523 15.341a.66.66 0 01-.66.66H7.137a.66.66 0 01-.66-.66V8.66c0-.364.296-.66.66-.66h9.726c.364 0 .66.296.66.66v6.681zM6.477 6a.5.5 0 01.5-.5h10.046a.5.5 0 01.5.5v.5H6.477V6zM4 9.5a1 1 0 011-1h.477v5H5a1 1 0 01-1-1v-3zm15 0v3a1 1 0 01-1 1h-.477v-5H18a1 1 0 011 1zM8.5 18a.5.5 0 01.5-.5h.5v-2h-.5a.5.5 0 010-1H15a.5.5 0 010 1h-.5v2h.5a.5.5 0 010 1h-6a.5.5 0 01-.5-.5z"/></svg>
+          <div><div class="dl-sub">Tải trên</div><div class="dl-name">Google Play</div></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- DEVICE MOCKUP -->
+    <div class="devices reveal in">
+      <!-- laptop (web app) -->
+      <div class="laptop">
+        <div class="lid">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span class="url">app.vendo.vn</span></div>
+            <div class="browser-body">
+              <div class="stat-mini"><div class="k">Doanh thu hôm nay</div><div class="v b">18.4tr</div></div>
+              <div class="stat-mini"><div class="k">Đơn hàng</div><div class="v">142</div></div>
+              <div class="stat-mini"><div class="k">Lợi nhuận</div><div class="v g">+5.2tr</div></div>
+              <div class="wide"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:80%"></span><span style="height:60%"></span><span style="height:95%"></span><span style="height:72%"></span></div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+      </div>
+      <!-- phone (mobile app) -->
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="app-top">
+            <div class="row">
+              <div><div class="hi">Chào buổi sáng,</div><div class="name">Shop Mây ✨</div></div>
+              <div class="avatar">M</div>
+            </div>
+            <div class="rev-card">
+              <div class="lbl"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Doanh thu hôm nay</div>
+              <div class="val"><span id="rev">0</span>đ</div>
+              <div class="up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none"><path d="M7 14l5-5 5 5" stroke="#b8ffe7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +24% so với hôm qua</div>
+            </div>
+          </div>
+          <div class="app-body">
+            <div class="sec-lbl">7 ngày gần nhất</div>
+            <div class="chart">
+              <div class="bar" data-h="42"></div><div class="bar" data-h="60"></div>
+              <div class="bar" data-h="48"></div><div class="bar" data-h="74"></div>
+              <div class="bar" data-h="55"></div><div class="bar peak" data-h="100"></div>
+              <div class="bar" data-h="68"></div>
+            </div>
+            <div class="sec-lbl">Đơn mới</div>
+            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t">Son kem lì #07</div><div class="s">vừa xong · ĐH #1042</div></div><div class="amt">+185k</div></div>
+            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t">Bộ skincare full</div><div class="s">3 phút · ĐH #1041</div></div><div class="amt">+640k</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<!-- PLACEHOLDER: thay số liệu thật của Vendo vào đây -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid reveal">
+      <div><div class="num"><span class="count" data-to="5000">0</span>+</div><div class="cap">Chủ shop đang dùng Vendo</div></div>
+      <div><div class="num"><span class="count" data-to="2">0</span>tr+</div><div class="cap">Đơn hàng xử lý mỗi tháng</div></div>
+      <div><div class="num"><span class="count" data-to="48" data-decimal="1">0</span>/5</div><div class="cap">Điểm hài lòng trên App Store</div></div>
+    </div>
+    <div class="badges reveal">
+      <span class="lbl">Được tin dùng bởi shop:</span>
+      <span class="chip">Mỹ phẩm</span>
+      <span class="chip">Thời trang</span>
+      <span class="chip">Tạp hóa</span>
+      <span class="chip">Phụ kiện</span>
+      <span class="chip">Mẹ &amp; bé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN ============ -->
+<section class="block pain">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>Nghe có quen không?</span>
+      <h2>Quản lý bằng Excel quá mệt mỏi</h2>
+      <p>Mỗi ngày trôi qua là một lần đau đầu vì sổ sách rối, số liệu lệch và không nắm được tình hình cửa hàng.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>File Excel rối tung</h3><p>Mỗi lần tìm một con số là một cực hình, lỡ tay là sai cả bảng.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Không rõ tồn kho</h3><p>Hết hàng mới biết, hàng ế thì chất đống mà chẳng hay.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Cuối ngày lệch tiền</h3><p>Nhân viên ghi tay, đối chiếu thu chi mãi vẫn không khớp.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Đi vắng là mù tịt</h3><p>Rời cửa hàng một buổi là không biết hôm nay bán được bao nhiêu.</p></div></div>
+    </div>
+    <div class="pain-cta reveal">
+      <div class="lead">Có một cách dễ hơn nhiều — <b>Vendo</b>.</div>
+      <a href="https://shop.vendo.life" class="btn btn-primary">Xem Vendo giải quyết thế nào</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ COMPARISON ============ -->
+<section class="block compare-section" id="compare" style="padding-top:60px;padding-bottom:60px;background:#fff">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>So sánh</span>
+      <h2>Tại sao không chỉ dùng Excel?</h2>
+      <p>Excel miễn phí — nhưng chi phí ẩn của nó là thời gian, sai sót và cơ hội bỏ lỡ mỗi ngày.</p>
+    </div>
+    <div class="compare-table reveal">
+      <div class="ct-head">
+        <div class="ct-col-feat"></div>
+        <div class="ct-col ct-excel">
+          <div class="ct-label ct-label-excel">📊 Excel / Sổ tay</div>
+        </div>
+        <div class="ct-col ct-vendo">
+          <div class="ct-label ct-label-vendo">
+            <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" style="height:22px">
+              <g transform="translate(5,5) translate(-3,-3)"><defs><clipPath id="vlogo-cmp"><circle cx="33" cy="33" r="30"/></clipPath></defs>
+              <circle cx="33" cy="33" r="30" fill="#1E88FF"/><circle cx="63" cy="33" r="30" fill="#2ECC71"/><circle cx="63" cy="33" r="30" fill="#149E7C" clip-path="url(#vlogo-cmp)"/></g>
+              <g transform="translate(113,67.5)"><g fill="#0C1B33">
+                <path transform="translate(0,0) scale(0.06,-0.06)" d="M300 129 440 554H589L384 0H214L10 554H160Z"/>
+                <path transform="translate(35.9,0) scale(0.06,-0.06)" d="M580 235H175Q180 175 217 141Q254 107 308 107Q386 107 419 174H570Q546 94 478 42Q410-9 311-9Q231-9 167 26Q104 62 68 127Q33 192 33 277Q33 363 68 428Q103 493 166 528Q229 563 311 563Q390 563 452 529Q515 495 549 432Q584 370 584 289Q584 259 580 235ZM439 329Q438 383 400 415Q362 448 307 448Q255 448 219 416Q184 385 176 329Z"/>
+                <path transform="translate(72.9,0) scale(0.06,-0.06)" d="M597 325V0H457V306Q457 372 424 407Q391 443 334 443Q276 443 242 407Q209 372 209 306V0H69V554H209V485Q237 521 280 541Q324 562 376 562Q475 562 536 499Q597 437 597 325Z"/>
+                <path transform="translate(112.6,0) scale(0.06,-0.06)" d="M287 563Q341 563 390 539Q439 516 468 477V740H610V0H468V82Q442 41 395 16Q348-9 286-9Q216-9 158 27Q100 63 66 128Q33 194 33 279Q33 363 66 428Q100 493 158 528Q216 563 287 563ZM322 440Q283 440 250 421Q217 402 196 365Q176 329 176 279Q176 229 196 191Q217 154 250 134Q284 114 322 114Q361 114 395 133Q429 153 449 189Q469 226 469 277Q469 328 449 364Q429 401 395 420Q361 440 322 440Z"/>
+                <path transform="translate(153.3,0) scale(0.06,-0.06)" d="M34 277Q34 362 71 427Q109 492 174 527Q239 563 319 563Q399 563 464 527Q529 492 566 427Q604 362 604 277Q604 192 565 127Q527 62 461 26Q396-9 315-9Q235-9 171 26Q107 62 70 127Q34 192 34 277ZM460 277Q460 356 418 398Q377 441 317 441Q257 441 216 398Q176 356 176 277Q176 198 215 155Q255 113 315 113Q353 113 386 131Q420 150 440 187Q460 224 460 277Z"/>
+              </g></g>
+            </svg>
+            <span style="font-size:13px;font-weight:700;color:var(--blue)">Freemium</span>
+          </div>
+        </div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-feat">Xem doanh thu từ xa (điện thoại)</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row ct-alt">
+        <div class="ct-feat">Tồn kho realtime</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-feat">Nhiều nhân viên cùng dùng</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row ct-alt">
+        <div class="ct-feat">Báo cáo công nợ tự động</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-feat">Đồng bộ điện thoại ↔ máy tính</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row ct-alt">
+        <div class="ct-feat">Cảnh báo hàng sắp hết</div>
+        <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
+        <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
+      </div>
+      <div class="ct-row ct-footer">
+        <div class="ct-feat" style="font-weight:700">Chi phí</div>
+        <div class="ct-col ct-excel"><span style="font-size:14px;color:var(--ink-2)">0đ + thời gian &amp; sai sót</span></div>
+        <div class="ct-col ct-vendo"><span style="font-size:14px;font-weight:700;color:var(--mint-d)">0đ — mãi mãi</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal">
+      <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí ngay hôm nay</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>Tính năng</span>
+      <h2>Mọi thứ để vận hành cửa hàng</h2>
+      <p>Một app duy nhất thay cho cả chục file Excel, cuốn sổ và phần mềm cũ rời rạc.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Bán hàng nhanh</h3>
+        <p>Tạo đơn, in hóa đơn, quét mã vạch chỉ trong vài giây — kể cả lúc khách đông.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 8l9 5 9-5M12 13v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Quản lý kho</h3>
+        <p>Biết chính xác còn bao nhiêu, hàng nào bán chạy, tự cảnh báo khi sắp hết.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Công nợ rõ ràng</h3>
+        <p>Theo dõi ai nợ, nợ bao nhiêu, đến hạn tự động nhắc — không bao giờ thất thoát.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 14l4-4 3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Báo cáo realtime</h3>
+        <p>Doanh thu, lãi lỗ, hàng bán chạy — cập nhật từng phút, không cần tính tay.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="2"/><path d="M3 20a6 6 0 0112 0M16 6a3 3 0 010 6M19 20a6 6 0 00-4-5.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Quản lý nhân viên</h3>
+        <p>Phân quyền từng người, theo dõi doanh số, biết ai bán tốt — minh bạch và công bằng.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="16" y="8" width="6" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M5 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Mọi lúc, mọi nơi</h3>
+        <p>App điện thoại + web máy tính, dữ liệu đồng bộ tức thì. Ở đâu cũng quản được shop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DUAL PLATFORM ============ -->
+<section class="block" id="platform" style="padding-top:30px">
+  <div class="dual reveal">
+    <div class="dual-inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Điện thoại + Máy tính</span>
+        <h2>Điện thoại để bán.<br>Máy tính để quản.</h2>
+        <p>Nhân viên bán hàng trên điện thoại, bạn theo dõi toàn bộ trên máy tính. Mọi đơn hàng, mọi thay đổi đồng bộ ngay lập tức giữa các thiết bị.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> App native cho iOS &amp; Android, mượt và nhanh</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Web app đầy đủ, mở trên mọi trình duyệt</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Đồng bộ thời gian thực, không lo lệch dữ liệu</li>
+        </ul>
+      </div>
+      <div class="dual-visual">
+        <div class="mini-laptop">
+          <div class="scr"><i class="tall"></i><i></i><i></i></div>
+          <div class="foot"></div>
+        </div>
+        <div class="mini-phone"><div class="s"><b></b><i></i><i></i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<!-- PLACEHOLDER: thay bằng testimonial thật từ khách hàng của bạn -->
+<section class="block" id="testimonials">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>Khách hàng nói gì</span>
+      <h2>Chủ shop tin Vendo</h2>
+      <p>Hàng nghìn cửa hàng đã chuyển từ Excel sang Vendo và không nhìn lại.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
+        <q>Trước mình quản lý bằng 4 file Excel, cuối tháng tính toán muốn xỉu. Dùng Vendo xong nhìn doanh thu ngay trên điện thoại, đi cà phê vẫn nắm được shop.</q>
+        <div class="who"><div class="av">H</div><div><div class="nm">Chị Hương</div><div class="rl">Shop mỹ phẩm, Hà Nội</div></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
+        <q>Nhân viên bán trên điện thoại, mình ngồi nhà mở máy tính theo dõi. Tồn kho rõ ràng, không còn cảnh hết hàng mới biết. Đáng đồng tiền.</q>
+        <div class="who"><div class="av">T</div><div><div class="nm">Anh Tuấn</div><div class="rl">Cửa hàng thời trang, TP.HCM</div></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
+        <q>Bắt đầu miễn phí nên mình thử cho yên tâm, ai ngờ dùng quen luôn. Công nợ khách quen giờ rõ ràng từng đồng, không còn ngại đòi nợ.</q>
+        <div class="who"><div class="av">L</div><div><div class="nm">Chị Lan</div><div class="rl">Tạp hóa, Đà Nẵng</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<!-- PLACEHOLDER: thay mức giá thật của các gói vào đây -->
+<section class="block price" id="pricing">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>Bảng giá</span>
+      <h2>Bắt đầu miễn phí, nâng cấp khi cần</h2>
+      <p>Không cần thẻ tín dụng. Không ràng buộc. Dùng thử thoải mái rồi mới quyết định.</p>
+    </div>
+    <div class="price-grid">
+
+      <!-- FREEMIUM -->
+      <div class="plan reveal">
+        <h3>Freemium</h3>
+        <p class="desc">Dùng miễn phí, không giới hạn thời gian.</p>
+        <div class="cost"><span class="n">Miễn phí</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-ghost" style="margin:20px 0 24px">Bắt đầu miễn phí</a>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            50 sản phẩm · 1 người dùng
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Báo cáo cơ bản — Công nợ, tồn kho
+          </li>
+          <li class="off">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            Xuất báo cáo
+          </li>
+          <li class="off">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            Xuất/nhập sản phẩm từ Excel
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lịch sử báo cáo: 30 ngày
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Hỗ trợ: Cộng đồng
+          </li>
+        </ul>
+      </div>
+
+      <!-- PLUS -->
+      <div class="plan pop reveal">
+        <span class="tag">Phổ biến</span>
+        <h3>Plus</h3>
+        <p class="desc">Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.</p>
+        <div class="cost"><span class="n">125.000đ</span><span class="u">/tháng</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-primary">Dùng thử 1 tháng miễn phí</a>
+        <p style="font-size:13px;color:var(--muted);margin-top:-14px;margin-bottom:18px;text-align:center">Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            500 sản phẩm · 5 người dùng
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Xuất báo cáo
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Xuất/nhập sản phẩm từ Excel
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lịch sử báo cáo: 6 tháng
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Hỗ trợ: Qua email
+          </li>
+        </ul>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan reveal">
+        <span class="tag">Giá trị nhất</span>
+        <h3>Pro</h3>
+        <p class="desc">Không giới hạn mọi tính năng, hỗ trợ ưu tiên.</p>
+        <div class="cost"><span class="n">249.000đ</span><span class="u">/tháng</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-ghost">Nâng cấp ngay</a>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Không giới hạn sản phẩm · Không giới hạn người dùng
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Xuất báo cáo
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Xuất/nhập sản phẩm từ Excel
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lịch sử báo cáo: Không giới hạn
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Hỗ trợ: Ưu tiên
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FAQ ============ -->
+<section class="block faq-section" id="faq" style="background:#fff">
+  <div class="wrap">
+    <div class="head-center reveal">
+      <span class="eyebrow"><span class="dot"></span>Câu hỏi thường gặp</span>
+      <h2>Bạn thắc mắc, mình giải đáp</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Freemium có bị giới hạn thời gian không?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Không. Gói Freemium của Vendo <strong>miễn phí mãi mãi</strong> — không có ngày hết hạn. Bạn có thể dùng thoải mái với 50 sản phẩm và 1 nhân viên mà không mất đồng nào. Nâng cấp khi bạn thấy cần, không ai ép.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          1 tháng Plus miễn phí hoạt động thế nào?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Khi đăng ký tài khoản mới, bạn được tự động kích hoạt gói Plus đầy đủ trong <strong>30 ngày đầu hoàn toàn miễn phí</strong> — không cần nhập thẻ tín dụng. Sau 30 ngày, bạn có thể chọn tiếp tục với Plus (125.000đ/tháng), nâng lên Pro, hoặc dùng tiếp Freemium.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Dữ liệu có bị mất khi đổi điện thoại không?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Không bao giờ. Toàn bộ dữ liệu của bạn được lưu trên cloud và <strong>đồng bộ realtime</strong> giữa tất cả thiết bị. Đổi điện thoại, mở máy tính, hay thêm nhân viên mới — chỉ cần đăng nhập là có đủ dữ liệu ngay lập tức.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Vendo chạy trên thiết bị nào?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Vendo có <strong>app native cho iOS (iPhone/iPad) và Android</strong>, đồng thời có <strong>web app</strong> chạy trên trình duyệt của máy tính — Windows, Mac hay Linux đều được. Dữ liệu đồng bộ realtime giữa tất cả thiết bị.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Nếu muốn hủy gói Plus có dễ không?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Rất dễ. Bạn có thể <strong>hủy bất cứ lúc nào</strong> ngay trong phần cài đặt tài khoản, không cần liên hệ hỗ trợ. Sau khi hủy, bạn vẫn dùng Plus đến hết chu kỳ đã trả, rồi tự động về Freemium — dữ liệu vẫn được giữ nguyên.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="block" style="padding-top:20px">
+  <div class="final reveal">
+    <h2>Sẵn sàng bỏ Excel chưa?</h2>
+    <p>Tạo tài khoản Vendo trong 2 phút và quản lý cửa hàng theo cách hiện đại hơn — ngay hôm nay.</p>
+    <a href="https://shop.vendo.life" class="btn">Bắt đầu miễn phí</a>
+    <div class="sub">Miễn phí mãi mãi cho gói cơ bản · Không cần thẻ tín dụng</div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="https://vendo.life" class="logo" aria-label="Vendo" style="margin-bottom:14px">
+          <svg class="logo-svg" viewBox="0 0 1070 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vendo" style="height:30px">
+            <g transform="translate(50,50) translate(-10,-10)">
+              <defs><clipPath id="vlogo-foot"><circle cx="110" cy="110" r="100"/></clipPath></defs>
+              <circle cx="110" cy="110" r="100" fill="#1E88FF"/>
+              <circle cx="210" cy="110" r="100" fill="#2ECC71"/>
+              <circle cx="210" cy="110" r="100" fill="#149E7C" clip-path="url(#vlogo-foot)"/>
+            </g>
+            <g transform="translate(388,223.1)"><g fill="#1F2937">
+              <path transform="translate(0,0) scale(0.2,-0.2)" d="M300 129 440 554H589L384 0H214L10 554H160Z"/>
+              <path transform="translate(119.8,0) scale(0.2,-0.2)" d="M580 235H175Q180 175 217.0 141.0Q254 107 308 107Q386 107 419 174H570Q546 94 478.0 42.5Q410 -9 311 -9Q231 -9 167.5 26.5Q104 62 68.5 127.0Q33 192 33 277Q33 363 68.0 428.0Q103 493 166.0 528.0Q229 563 311 563Q390 563 452.5 529.0Q515 495 549.5 432.5Q584 370 584 289Q584 259 580 235ZM439 329Q438 383 400.0 415.5Q362 448 307 448Q255 448 219.5 416.5Q184 385 176 329Z"/>
+              <path transform="translate(243.2,0) scale(0.2,-0.2)" d="M597 325V0H457V306Q457 372 424.0 407.5Q391 443 334 443Q276 443 242.5 407.5Q209 372 209 306V0H69V554H209V485Q237 521 280.5 541.5Q324 562 376 562Q475 562 536.0 499.5Q597 437 597 325Z"/>
+              <path transform="translate(375.4,0) scale(0.2,-0.2)" d="M287 563Q341 563 390.0 539.5Q439 516 468 477V740H610V0H468V82Q442 41 395.0 16.0Q348 -9 286 -9Q216 -9 158.0 27.0Q100 63 66.5 128.5Q33 194 33 279Q33 363 66.5 428.0Q100 493 158.0 528.0Q216 563 287 563ZM322 440Q283 440 250.0 421.0Q217 402 196.5 365.5Q176 329 176 279Q176 229 196.5 191.5Q217 154 250.5 134.0Q284 114 322 114Q361 114 395.0 133.5Q429 153 449.0 189.5Q469 226 469 277Q469 328 449.0 364.5Q429 401 395.0 420.5Q361 440 322 440Z"/>
+              <path transform="translate(511,0) scale(0.2,-0.2)" d="M34 277Q34 362 71.5 427.0Q109 492 174.0 527.5Q239 563 319 563Q399 563 464.0 527.5Q529 492 566.5 427.0Q604 362 604 277Q604 192 565.5 127.0Q527 62 461.5 26.5Q396 -9 315 -9Q235 -9 171.0 26.5Q107 62 70.5 127.0Q34 192 34 277ZM460 277Q460 356 418.5 398.5Q377 441 317 441Q257 441 216.5 398.5Q176 356 176 277Q176 198 215.5 155.5Q255 113 315 113Q353 113 386.5 131.5Q420 150 440.0 187.0Q460 224 460 277Z"/>
+            </g></g>
+          </svg>
+        </a>
+        <p class="blurb">Phần mềm quản lý bán hàng cho chủ shop Việt. Đơn giản, hiện đại, dùng trên cả điện thoại lẫn máy tính.</p>
+      </div>
+      <div class="foot-col">
+        <h3>Sản phẩm</h3>
+        <a href="#features">Tính năng</a>
+        <a href="#platform">Đa nền tảng</a>
+        <a href="#pricing">Bảng giá</a>
+        <a href="https://shop.vendo.life">Tải app</a>
+      </div>
+      <div class="foot-col">
+        <h3>Hỗ trợ</h3>
+        <a href="#">Hướng dẫn sử dụng</a>
+        <a href="#faq">Câu hỏi thường gặp</a>
+        <a href="#">Liên hệ</a>
+        <a href="#">Cộng đồng</a>
+      </div>
+      <div class="foot-col">
+        <h3>Công ty</h3>
+        <a href="#">Về Vendo</a>
+        <a href="#">Điều khoản</a>
+        <a href="#">Bảo mật</a>
+        <a href="#">Tuyển dụng</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vendo. Mọi quyền được bảo lưu.</span>
+      <span>Made in Vietnam 🇻🇳</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+  // FAQ accordion
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  }
+  // Open first FAQ by default
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const first = document.querySelector('.faq-item');
+    if(first) first.classList.add('open');
+  });
+
+  // sticky nav shadow
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+
+  // mobile menu
+  const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
+  function setMenu(open){
+    menu.classList.toggle('open',open);
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  }
+  burger.addEventListener('click',(e)=>{e.stopPropagation();setMenu(!menu.classList.contains('open'));});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('click',(e)=>{
+    if(menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape') setMenu(false);});
+
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // animated revenue counter in phone
+  function animateRev(){
+    const el=document.getElementById('rev'); if(!el||el.dataset.done)return;
+    el.dataset.done=1; const target=18400000; const start=performance.now(),dur=1600;
+    function step(t){
+      const p=Math.min((t-start)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*e).toLocaleString('vi-VN');
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  // grow chart bars
+  function growBars(){document.querySelectorAll('.chart .bar').forEach((b,i)=>{setTimeout(()=>b.style.height=(b.dataset.h)+'%',120*i)});}
+
+  // count-up trust stats
+  function countStat(el){
+    if(el.dataset.done)return; el.dataset.done=1;
+    const to=+el.dataset.to, dec=el.dataset.decimal?+el.dataset.decimal:0;
+    const start=performance.now(),dur=1400;
+    function step(t){
+      const p=Math.min((t-start)/dur,1),e=1-Math.pow(1-p,3),v=to*e;
+      el.textContent=dec? (v/Math.pow(10,dec)).toFixed(dec) : Math.round(v).toLocaleString('vi-VN');
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const statIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)countStat(e.target)})},{threshold:.6});
+  document.querySelectorAll('.count').forEach(el=>statIO.observe(el));
+
+  // kick off phone animations once devices visible
+  const devIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateRev();growBars();devIO.disconnect();}})},{threshold:.3});
+  const dev=document.querySelector('.devices'); if(dev)devIO.observe(dev);
+</script>
+</body>
+</html>
