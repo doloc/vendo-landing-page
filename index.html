@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" id="htmlRoot">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -239,6 +239,13 @@
   .hamburger .icon-close{position:absolute;top:8px;left:8px;opacity:0;transform:rotate(-90deg) scale(.5)}
   .hamburger.open .icon-menu{opacity:0;transform:rotate(90deg) scale(.5)}
   .hamburger.open .icon-close{opacity:1;transform:rotate(0deg) scale(1)}
+
+  /* ---- LANG SWITCH ---- */
+  .lang-switch{display:flex;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:3px;gap:2px;flex:none}
+  .lang-btn{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.02em;padding:6px 12px;border-radius:999px;border:0;background:none;color:var(--muted);cursor:pointer;transition:.15s}
+  .lang-btn.active{background:var(--blue-d);color:#fff}
+  .lang-btn:hover:not(.active){color:var(--ink)}
+  #mobileMenu .lang-switch{margin-top:16px;justify-content:center;border-color:var(--line)}
 
   /* ---- HERO ---- */
   .hero{position:relative;padding:80px 0 90px;overflow:hidden}
@@ -508,13 +515,17 @@
       </svg>
     </a>
     <nav class="nav-links">
-      <a href="#features">Tính năng</a>
-      <a href="#platform">Đa nền tảng</a>
-      <a href="#testimonials">Khách hàng</a>
-      <a href="#pricing">Bảng giá</a>
+      <a href="#features" data-i18n="nav.features">Tính năng</a>
+      <a href="#platform" data-i18n="nav.platform">Đa nền tảng</a>
+      <a href="#testimonials" data-i18n="nav.testimonials">Khách hàng</a>
+      <a href="#pricing" data-i18n="nav.pricing">Bảng giá</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí</a>
+      <div class="lang-switch" role="group" aria-label="Chọn ngôn ngữ / Language">
+        <button type="button" class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="nav.cta">Bắt đầu miễn phí</a>
       <button class="hamburger" id="burger" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -523,11 +534,15 @@
   </div>
 </header>
 <div id="mobileMenu">
-  <a href="#features">Tính năng</a>
-  <a href="#platform">Đa nền tảng</a>
-  <a href="#testimonials">Khách hàng</a>
-  <a href="#pricing">Bảng giá</a>
-  <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí</a>
+  <a href="#features" data-i18n="nav.features">Tính năng</a>
+  <a href="#platform" data-i18n="nav.platform">Đa nền tảng</a>
+  <a href="#testimonials" data-i18n="nav.testimonials">Khách hàng</a>
+  <a href="#pricing" data-i18n="nav.pricing">Bảng giá</a>
+  <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="nav.cta">Bắt đầu miễn phí</a>
+  <div class="lang-switch" role="group" aria-label="Chọn ngôn ngữ / Language">
+    <button type="button" class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+    <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <main>
@@ -535,32 +550,32 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="reveal in">
-      <span class="eyebrow"><span class="dot"></span>Phần mềm quản lý bán hàng</span>
-      <h1>Cả cửa hàng của bạn,<br><span class="hl">gọn trong một app</span></h1>
-      <p class="lede">Vendo giúp chủ shop mỹ phẩm, thời trang, tạp hóa… quản lý bán hàng, kho, công nợ và báo cáo — trên cả điện thoại lẫn máy tính. Bỏ Excel, không cần phần mềm cũ rườm rà.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Phần mềm quản lý bán hàng</span></span>
+      <h1 data-i18n-html="hero.title">Cả cửa hàng của bạn,<br><span class="hl">gọn trong một app</span></h1>
+      <p class="lede" data-i18n="hero.lede">Vendo giúp chủ shop mỹ phẩm, thời trang, tạp hóa… quản lý bán hàng, kho, công nợ và báo cáo — trên cả điện thoại lẫn máy tính. Bỏ Excel, không cần phần mềm cũ rườm rà.</p>
       <div class="hero-actions">
         <a href="https://shop.vendo.life" class="btn btn-primary">
-          Bắt đầu miễn phí
+          <span data-i18n="hero.cta_primary">Bắt đầu miễn phí</span>
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#platform" class="btn btn-ghost">
           <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
-          Xem demo
+          <span data-i18n="hero.cta_demo">Xem demo</span>
         </a>
       </div>
       <div class="hero-badges">
-        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Freemium miễn phí mãi mãi</span>
-        <span class="hbadge hbadge-green"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z" fill="currentColor"/></svg>1 tháng Plus miễn phí</span>
-        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Không cần thẻ tín dụng</span>
+        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.badge1">Freemium miễn phí mãi mãi</span></span>
+        <span class="hbadge hbadge-green"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z" fill="currentColor"/></svg><span data-i18n="hero.badge2">1 tháng Plus miễn phí</span></span>
+        <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.badge3">Không cần thẻ tín dụng</span></span>
       </div>
       <div class="app-dl">
         <button type="button" class="dl-btn dl-ios" onclick="openAppSoon('iOS','App Store')">
           <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.28-1.32-3.12-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <div><div class="dl-sub">Tải trên</div><div class="dl-name">App Store</div></div>
+          <div><div class="dl-sub" data-i18n="hero.dl_on">Tải trên</div><div class="dl-name">App Store</div></div>
         </button>
         <button type="button" class="dl-btn dl-android" onclick="openAppSoon('Android','Google Play')">
           <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.523 15.341a.66.66 0 01-.66.66H7.137a.66.66 0 01-.66-.66V8.66c0-.364.296-.66.66-.66h9.726c.364 0 .66.296.66.66v6.681zM6.477 6a.5.5 0 01.5-.5h10.046a.5.5 0 01.5.5v.5H6.477V6zM4 9.5a1 1 0 011-1h.477v5H5a1 1 0 01-1-1v-3zm15 0v3a1 1 0 01-1 1h-.477v-5H18a1 1 0 011 1zM8.5 18a.5.5 0 01.5-.5h.5v-2h-.5a.5.5 0 010-1H15a.5.5 0 010 1h-.5v2h.5a.5.5 0 010 1h-6a.5.5 0 01-.5-.5z"/></svg>
-          <div><div class="dl-sub">Tải trên</div><div class="dl-name">Google Play</div></div>
+          <div><div class="dl-sub" data-i18n="hero.dl_on">Tải trên</div><div class="dl-name">Google Play</div></div>
         </button>
       </div>
     </div>
@@ -573,9 +588,9 @@
           <div class="browser">
             <div class="bar"><i></i><i></i><i></i><span class="url">app.vendo.vn</span></div>
             <div class="browser-body">
-              <div class="stat-mini"><div class="k">Doanh thu hôm nay</div><div class="v b">18.4tr</div></div>
-              <div class="stat-mini"><div class="k">Đơn hàng</div><div class="v">142</div></div>
-              <div class="stat-mini"><div class="k">Lợi nhuận</div><div class="v g">+5.2tr</div></div>
+              <div class="stat-mini"><div class="k" data-i18n="mock.revenue_today">Doanh thu hôm nay</div><div class="v b">18.4tr</div></div>
+              <div class="stat-mini"><div class="k" data-i18n="mock.orders">Đơn hàng</div><div class="v">142</div></div>
+              <div class="stat-mini"><div class="k" data-i18n="mock.profit">Lợi nhuận</div><div class="v g">+5.2tr</div></div>
               <div class="wide"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:80%"></span><span style="height:60%"></span><span style="height:95%"></span><span style="height:72%"></span></div>
             </div>
           </div>
@@ -588,26 +603,26 @@
         <div class="screen">
           <div class="app-top">
             <div class="row">
-              <div><div class="hi">Chào buổi sáng,</div><div class="name">Shop Mây ✨</div></div>
+              <div><div class="hi" data-i18n="mock.greeting">Chào buổi sáng,</div><div class="name">Shop Mây ✨</div></div>
               <div class="avatar">M</div>
             </div>
             <div class="rev-card">
-              <div class="lbl"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Doanh thu hôm nay</div>
+              <div class="lbl"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="mock.revenue_today">Doanh thu hôm nay</span></div>
               <div class="val"><span id="rev">0</span>đ</div>
-              <div class="up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none"><path d="M7 14l5-5 5 5" stroke="#b8ffe7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +24% so với hôm qua</div>
+              <div class="up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none"><path d="M7 14l5-5 5 5" stroke="#b8ffe7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="mock.vs_yesterday">+24% so với hôm qua</span></div>
             </div>
           </div>
           <div class="app-body">
-            <div class="sec-lbl">7 ngày gần nhất</div>
+            <div class="sec-lbl" data-i18n="mock.last7days">7 ngày gần nhất</div>
             <div class="chart">
               <div class="bar" data-h="42"></div><div class="bar" data-h="60"></div>
               <div class="bar" data-h="48"></div><div class="bar" data-h="74"></div>
               <div class="bar" data-h="55"></div><div class="bar peak" data-h="100"></div>
               <div class="bar" data-h="68"></div>
             </div>
-            <div class="sec-lbl">Đơn mới</div>
-            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t">Son kem lì #07</div><div class="s">vừa xong · ĐH #1042</div></div><div class="amt">+185k</div></div>
-            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t">Bộ skincare full</div><div class="s">3 phút · ĐH #1041</div></div><div class="amt">+640k</div></div>
+            <div class="sec-lbl" data-i18n="mock.new_orders">Đơn mới</div>
+            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t" data-i18n="mock.item1">Son kem lì #07</div><div class="s" data-i18n="mock.order1_meta">vừa xong · ĐH #1042</div></div><div class="amt">+185k</div></div>
+            <div class="order"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1 5h11l1-5M5 7h14l-1 12H6L5 7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="meta"><div class="t" data-i18n="mock.item2">Bộ skincare full</div><div class="s" data-i18n="mock.order2_meta">3 phút · ĐH #1041</div></div><div class="amt">+640k</div></div>
           </div>
         </div>
       </div>
@@ -620,17 +635,17 @@
 <section class="trust">
   <div class="wrap">
     <div class="trust-grid reveal">
-      <div><div class="num"><span class="count" data-to="5000">0</span>+</div><div class="cap">Chủ shop đang dùng Vendo</div></div>
-      <div><div class="num"><span class="count" data-to="2">0</span>tr+</div><div class="cap">Đơn hàng xử lý mỗi tháng</div></div>
-      <div><div class="num"><span class="count" data-to="48" data-decimal="1">0</span>/5</div><div class="cap">Điểm hài lòng trên App Store</div></div>
+      <div><div class="num"><span class="count" data-to="5000">0</span>+</div><div class="cap" data-i18n="trust.stat1">Chủ shop đang dùng Vendo</div></div>
+      <div><div class="num"><span class="count" data-to="2">0</span>tr+</div><div class="cap" data-i18n="trust.stat2">Đơn hàng xử lý mỗi tháng</div></div>
+      <div><div class="num"><span class="count" data-to="48" data-decimal="1">0</span>/5</div><div class="cap" data-i18n="trust.stat3">Điểm hài lòng trên App Store</div></div>
     </div>
     <div class="badges reveal">
-      <span class="lbl">Được tin dùng bởi shop:</span>
-      <span class="chip">Mỹ phẩm</span>
-      <span class="chip">Thời trang</span>
-      <span class="chip">Tạp hóa</span>
-      <span class="chip">Phụ kiện</span>
-      <span class="chip">Mẹ &amp; bé</span>
+      <span class="lbl" data-i18n="trust.trusted_by">Được tin dùng bởi shop:</span>
+      <span class="chip" data-i18n="trust.chip1">Mỹ phẩm</span>
+      <span class="chip" data-i18n="trust.chip2">Thời trang</span>
+      <span class="chip" data-i18n="trust.chip3">Tạp hóa</span>
+      <span class="chip" data-i18n="trust.chip4">Phụ kiện</span>
+      <span class="chip" data-i18n="trust.chip5">Mẹ &amp; bé</span>
     </div>
   </div>
 </section>
@@ -639,19 +654,19 @@
 <section class="block pain">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>Nghe có quen không?</span>
-      <h2>Quản lý bằng Excel quá mệt mỏi</h2>
-      <p>Mỗi ngày trôi qua là một lần đau đầu vì sổ sách rối, số liệu lệch và không nắm được tình hình cửa hàng.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="pain.eyebrow">Nghe có quen không?</span></span>
+      <h2 data-i18n="pain.title">Quản lý bằng Excel quá mệt mỏi</h2>
+      <p data-i18n="pain.sub">Mỗi ngày trôi qua là một lần đau đầu vì sổ sách rối, số liệu lệch và không nắm được tình hình cửa hàng.</p>
     </div>
     <div class="pain-grid">
-      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>File Excel rối tung</h3><p>Mỗi lần tìm một con số là một cực hình, lỡ tay là sai cả bảng.</p></div></div>
-      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Không rõ tồn kho</h3><p>Hết hàng mới biết, hàng ế thì chất đống mà chẳng hay.</p></div></div>
-      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Cuối ngày lệch tiền</h3><p>Nhân viên ghi tay, đối chiếu thu chi mãi vẫn không khớp.</p></div></div>
-      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3>Đi vắng là mù tịt</h3><p>Rời cửa hàng một buổi là không biết hôm nay bán được bao nhiêu.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3 data-i18n="pain.card1_title">File Excel rối tung</h3><p data-i18n="pain.card1_desc">Mỗi lần tìm một con số là một cực hình, lỡ tay là sai cả bảng.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3 data-i18n="pain.card2_title">Không rõ tồn kho</h3><p data-i18n="pain.card2_desc">Hết hàng mới biết, hàng ế thì chất đống mà chẳng hay.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3 data-i18n="pain.card3_title">Cuối ngày lệch tiền</h3><p data-i18n="pain.card3_desc">Nhân viên ghi tay, đối chiếu thu chi mãi vẫn không khớp.</p></div></div>
+      <div class="pain-card reveal"><div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h3 data-i18n="pain.card4_title">Đi vắng là mù tịt</h3><p data-i18n="pain.card4_desc">Rời cửa hàng một buổi là không biết hôm nay bán được bao nhiêu.</p></div></div>
     </div>
     <div class="pain-cta reveal">
-      <div class="lead">Có một cách dễ hơn nhiều — <b>Vendo</b>.</div>
-      <a href="https://shop.vendo.life" class="btn btn-primary">Xem Vendo giải quyết thế nào</a>
+      <div class="lead" data-i18n-html="pain.cta_lead">Có một cách dễ hơn nhiều — <b>Vendo</b>.</div>
+      <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="pain.cta_btn">Xem Vendo giải quyết thế nào</a>
     </div>
   </div>
 </section>
@@ -661,15 +676,15 @@
 <section class="block compare-section" id="compare" style="padding-top:60px;padding-bottom:60px;background:#fff">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>So sánh</span>
-      <h2>Tại sao không chỉ dùng Excel?</h2>
-      <p>Excel miễn phí — nhưng chi phí ẩn của nó là thời gian, sai sót và cơ hội bỏ lỡ mỗi ngày.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="cmp.eyebrow">So sánh</span></span>
+      <h2 data-i18n="cmp.title">Tại sao không chỉ dùng Excel?</h2>
+      <p data-i18n="cmp.sub">Excel miễn phí — nhưng chi phí ẩn của nó là thời gian, sai sót và cơ hội bỏ lỡ mỗi ngày.</p>
     </div>
     <div class="compare-table reveal">
       <div class="ct-head">
         <div class="ct-col-feat"></div>
         <div class="ct-col ct-excel">
-          <div class="ct-label ct-label-excel">📊 Excel / Sổ tay</div>
+          <div class="ct-label ct-label-excel"><span data-i18n="cmp.excel_label">📊 Excel / Sổ tay</span></div>
         </div>
         <div class="ct-col ct-vendo">
           <div class="ct-label ct-label-vendo">
@@ -689,43 +704,43 @@
         </div>
       </div>
       <div class="ct-row">
-        <div class="ct-feat">Xem doanh thu từ xa (điện thoại)</div>
+        <div class="ct-feat" data-i18n="cmp.row1">Xem doanh thu từ xa (điện thoại)</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row ct-alt">
-        <div class="ct-feat">Tồn kho realtime</div>
+        <div class="ct-feat" data-i18n="cmp.row2">Tồn kho realtime</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row">
-        <div class="ct-feat">Nhiều nhân viên cùng dùng</div>
+        <div class="ct-feat" data-i18n="cmp.row3">Nhiều nhân viên cùng dùng</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row ct-alt">
-        <div class="ct-feat">Báo cáo công nợ tự động</div>
+        <div class="ct-feat" data-i18n="cmp.row4">Báo cáo công nợ tự động</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row">
-        <div class="ct-feat">Đồng bộ điện thoại ↔ máy tính</div>
+        <div class="ct-feat" data-i18n="cmp.row5">Đồng bộ điện thoại ↔ máy tính</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row ct-alt">
-        <div class="ct-feat">Cảnh báo hàng sắp hết</div>
+        <div class="ct-feat" data-i18n="cmp.row6">Cảnh báo hàng sắp hết</div>
         <div class="ct-col ct-excel"><span class="ct-no">✗</span></div>
         <div class="ct-col ct-vendo"><span class="ct-yes">✓</span></div>
       </div>
       <div class="ct-row ct-footer">
-        <div class="ct-feat" style="font-weight:700">Chi phí</div>
-        <div class="ct-col ct-excel"><span style="font-size:14px;color:var(--ink-2)">0đ + thời gian &amp; sai sót</span></div>
-        <div class="ct-col ct-vendo"><span style="font-size:14px;font-weight:700;color:var(--mint-d)">0đ — mãi mãi</span></div>
+        <div class="ct-feat" style="font-weight:700" data-i18n="cmp.cost_label">Chi phí</div>
+        <div class="ct-col ct-excel"><span style="font-size:14px;color:var(--ink-2)" data-i18n="cmp.cost_excel">0đ + thời gian &amp; sai sót</span></div>
+        <div class="ct-col ct-vendo"><span style="font-size:14px;font-weight:700;color:var(--mint-d)" data-i18n="cmp.cost_vendo">0đ — mãi mãi</span></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:36px" class="reveal">
-      <a href="https://shop.vendo.life" class="btn btn-primary">Bắt đầu miễn phí ngay hôm nay</a>
+      <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="cmp.cta">Bắt đầu miễn phí ngay hôm nay</a>
     </div>
   </div>
 </section>
@@ -734,40 +749,40 @@
 <section class="block" id="features">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>Tính năng</span>
-      <h2>Mọi thứ để vận hành cửa hàng</h2>
-      <p>Một app duy nhất thay cho cả chục file Excel, cuốn sổ và phần mềm cũ rời rạc.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="feat.eyebrow">Tính năng</span></span>
+      <h2 data-i18n="feat.title">Mọi thứ để vận hành cửa hàng</h2>
+      <p data-i18n="feat.sub">Một app duy nhất thay cho cả chục file Excel, cuốn sổ và phần mềm cũ rời rạc.</p>
     </div>
     <div class="feat-grid">
       <div class="feat reveal">
         <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Bán hàng nhanh</h3>
-        <p>Tạo đơn, in hóa đơn, quét mã vạch chỉ trong vài giây — kể cả lúc khách đông.</p>
+        <h3 data-i18n="feat.f1_title">Bán hàng nhanh</h3>
+        <p data-i18n="feat.f1_desc">Tạo đơn, in hóa đơn, quét mã vạch chỉ trong vài giây — kể cả lúc khách đông.</p>
       </div>
       <div class="feat reveal">
         <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 8l9 5 9-5M12 13v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>Quản lý kho</h3>
-        <p>Biết chính xác còn bao nhiêu, hàng nào bán chạy, tự cảnh báo khi sắp hết.</p>
+        <h3 data-i18n="feat.f2_title">Quản lý kho</h3>
+        <p data-i18n="feat.f2_desc">Biết chính xác còn bao nhiêu, hàng nào bán chạy, tự cảnh báo khi sắp hết.</p>
       </div>
       <div class="feat reveal">
         <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Công nợ rõ ràng</h3>
-        <p>Theo dõi ai nợ, nợ bao nhiêu, đến hạn tự động nhắc — không bao giờ thất thoát.</p>
+        <h3 data-i18n="feat.f3_title">Công nợ rõ ràng</h3>
+        <p data-i18n="feat.f3_desc">Theo dõi ai nợ, nợ bao nhiêu, đến hạn tự động nhắc — không bao giờ thất thoát.</p>
       </div>
       <div class="feat reveal">
         <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 14l4-4 3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Báo cáo realtime</h3>
-        <p>Doanh thu, lãi lỗ, hàng bán chạy — cập nhật từng phút, không cần tính tay.</p>
+        <h3 data-i18n="feat.f4_title">Báo cáo realtime</h3>
+        <p data-i18n="feat.f4_desc">Doanh thu, lãi lỗ, hàng bán chạy — cập nhật từng phút, không cần tính tay.</p>
       </div>
       <div class="feat reveal">
         <div class="ic b"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="2"/><path d="M3 20a6 6 0 0112 0M16 6a3 3 0 010 6M19 20a6 6 0 00-4-5.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Quản lý nhân viên</h3>
-        <p>Phân quyền từng người, theo dõi doanh số, biết ai bán tốt — minh bạch và công bằng.</p>
+        <h3 data-i18n="feat.f5_title">Quản lý nhân viên</h3>
+        <p data-i18n="feat.f5_desc">Phân quyền từng người, theo dõi doanh số, biết ai bán tốt — minh bạch và công bằng.</p>
       </div>
       <div class="feat reveal">
         <div class="ic g"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="16" y="8" width="6" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M5 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Mọi lúc, mọi nơi</h3>
-        <p>App điện thoại + web máy tính, dữ liệu đồng bộ tức thì. Ở đâu cũng quản được shop.</p>
+        <h3 data-i18n="feat.f6_title">Mọi lúc, mọi nơi</h3>
+        <p data-i18n="feat.f6_desc">App điện thoại + web máy tính, dữ liệu đồng bộ tức thì. Ở đâu cũng quản được shop.</p>
       </div>
     </div>
   </div>
@@ -778,13 +793,13 @@
   <div class="dual reveal">
     <div class="dual-inner">
       <div>
-        <span class="eyebrow"><span class="dot"></span>Điện thoại + Máy tính</span>
-        <h2>Điện thoại để bán.<br>Máy tính để quản.</h2>
-        <p>Nhân viên bán hàng trên điện thoại, bạn theo dõi toàn bộ trên máy tính. Mọi đơn hàng, mọi thay đổi đồng bộ ngay lập tức giữa các thiết bị.</p>
+        <span class="eyebrow"><span class="dot"></span><span data-i18n="dual.eyebrow">Điện thoại + Máy tính</span></span>
+        <h2 data-i18n-html="dual.title">Điện thoại để bán.<br>Máy tính để quản.</h2>
+        <p data-i18n="dual.sub">Nhân viên bán hàng trên điện thoại, bạn theo dõi toàn bộ trên máy tính. Mọi đơn hàng, mọi thay đổi đồng bộ ngay lập tức giữa các thiết bị.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> App native cho iOS &amp; Android, mượt và nhanh</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Web app đầy đủ, mở trên mọi trình duyệt</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Đồng bộ thời gian thực, không lo lệch dữ liệu</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="dual.li1">App native cho iOS &amp; Android, mượt và nhanh</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="dual.li2">Web app đầy đủ, mở trên mọi trình duyệt</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="dual.li3">Đồng bộ thời gian thực, không lo lệch dữ liệu</span></li>
         </ul>
       </div>
       <div class="dual-visual">
@@ -803,25 +818,25 @@
 <section class="block" id="testimonials">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>Khách hàng nói gì</span>
-      <h2>Chủ shop tin Vendo</h2>
-      <p>Hàng nghìn cửa hàng đã chuyển từ Excel sang Vendo và không nhìn lại.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="testi.eyebrow">Khách hàng nói gì</span></span>
+      <h2 data-i18n="testi.title">Chủ shop tin Vendo</h2>
+      <p data-i18n="testi.sub">Hàng nghìn cửa hàng đã chuyển từ Excel sang Vendo và không nhìn lại.</p>
     </div>
     <div class="testi-grid">
       <div class="testi reveal">
         <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
-        <q>Trước mình quản lý bằng 4 file Excel, cuối tháng tính toán muốn xỉu. Dùng Vendo xong nhìn doanh thu ngay trên điện thoại, đi cà phê vẫn nắm được shop.</q>
-        <div class="who"><div class="av">H</div><div><div class="nm">Chị Hương</div><div class="rl">Shop mỹ phẩm, Hà Nội</div></div></div>
+        <q data-i18n="testi.q1">Trước mình quản lý bằng 4 file Excel, cuối tháng tính toán muốn xỉu. Dùng Vendo xong nhìn doanh thu ngay trên điện thoại, đi cà phê vẫn nắm được shop.</q>
+        <div class="who"><div class="av">H</div><div><div class="nm" data-i18n="testi.name1">Chị Hương</div><div class="rl" data-i18n="testi.role1">Shop mỹ phẩm, Hà Nội</div></div></div>
       </div>
       <div class="testi reveal">
         <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
-        <q>Nhân viên bán trên điện thoại, mình ngồi nhà mở máy tính theo dõi. Tồn kho rõ ràng, không còn cảnh hết hàng mới biết. Đáng đồng tiền.</q>
-        <div class="who"><div class="av">T</div><div><div class="nm">Anh Tuấn</div><div class="rl">Cửa hàng thời trang, TP.HCM</div></div></div>
+        <q data-i18n="testi.q2">Nhân viên bán trên điện thoại, mình ngồi nhà mở máy tính theo dõi. Tồn kho rõ ràng, không còn cảnh hết hàng mới biết. Đáng đồng tiền.</q>
+        <div class="who"><div class="av">T</div><div><div class="nm" data-i18n="testi.name2">Anh Tuấn</div><div class="rl" data-i18n="testi.role2">Cửa hàng thời trang, TP.HCM</div></div></div>
       </div>
       <div class="testi reveal">
         <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6L12 2z"/></svg></div>
-        <q>Bắt đầu miễn phí nên mình thử cho yên tâm, ai ngờ dùng quen luôn. Công nợ khách quen giờ rõ ràng từng đồng, không còn ngại đòi nợ.</q>
-        <div class="who"><div class="av">L</div><div><div class="nm">Chị Lan</div><div class="rl">Tạp hóa, Đà Nẵng</div></div></div>
+        <q data-i18n="testi.q3">Bắt đầu miễn phí nên mình thử cho yên tâm, ai ngờ dùng quen luôn. Công nợ khách quen giờ rõ ràng từng đồng, không còn ngại đòi nợ.</q>
+        <div class="who"><div class="av">L</div><div><div class="nm" data-i18n="testi.name3">Chị Lan</div><div class="rl" data-i18n="testi.role3">Tạp hóa, Đà Nẵng</div></div></div>
       </div>
     </div>
   </div>
@@ -832,113 +847,113 @@
 <section class="block price" id="pricing">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>Bảng giá</span>
-      <h2>Bắt đầu miễn phí, nâng cấp khi cần</h2>
-      <p>Không cần thẻ tín dụng. Không ràng buộc. Dùng thử thoải mái rồi mới quyết định.</p>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="price.eyebrow">Bảng giá</span></span>
+      <h2 data-i18n="price.title">Bắt đầu miễn phí, nâng cấp khi cần</h2>
+      <p data-i18n="price.sub">Không cần thẻ tín dụng. Không ràng buộc. Dùng thử thoải mái rồi mới quyết định.</p>
     </div>
     <div class="price-grid">
 
       <!-- FREEMIUM -->
       <div class="plan reveal">
         <h3>Freemium</h3>
-        <p class="desc">Dùng miễn phí, không giới hạn thời gian.</p>
-        <div class="cost"><span class="n">Miễn phí</span></div>
-        <a href="https://shop.vendo.life" class="btn btn-ghost" style="margin:20px 0 24px">Bắt đầu miễn phí</a>
+        <p class="desc" data-i18n="price.free_desc">Dùng miễn phí, không giới hạn thời gian.</p>
+        <div class="cost"><span class="n" data-i18n="price.free_cost">Miễn phí</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-ghost" style="margin:20px 0 24px" data-i18n="nav.cta">Bắt đầu miễn phí</a>
         <ul>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            50 sản phẩm · 1 người dùng
+            <span data-i18n="price.free_li1">50 sản phẩm · 1 người dùng</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Báo cáo cơ bản — Công nợ, tồn kho
+            <span data-i18n="price.free_li2">Báo cáo cơ bản — Công nợ, tồn kho</span>
           </li>
           <li class="off">
             <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-            Xuất báo cáo
+            <span data-i18n="price.export_report">Xuất báo cáo</span>
           </li>
           <li class="off">
             <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-            Xuất/nhập sản phẩm từ Excel
+            <span data-i18n="price.import_export">Xuất/nhập sản phẩm từ Excel</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Lịch sử báo cáo: 30 ngày
+            <span data-i18n="price.free_li5">Lịch sử báo cáo: 30 ngày</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hỗ trợ: Cộng đồng
+            <span data-i18n="price.free_li6">Hỗ trợ: Cộng đồng</span>
           </li>
         </ul>
       </div>
 
       <!-- PLUS -->
       <div class="plan pop reveal">
-        <span class="tag">Phổ biến</span>
+        <span class="tag" data-i18n="price.popular_tag">Phổ biến</span>
         <h3>Plus</h3>
-        <p class="desc">Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.</p>
-        <div class="cost"><span class="n">125.000đ</span><span class="u">/tháng</span></div>
-        <a href="https://shop.vendo.life" class="btn btn-primary">Dùng thử 1 tháng miễn phí</a>
-        <p style="font-size:13px;color:var(--muted);margin-top:-14px;margin-bottom:18px;text-align:center">Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào</p>
+        <p class="desc" data-i18n="price.plus_desc">Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.</p>
+        <div class="cost"><span class="n">125.000đ</span><span class="u" data-i18n="price.per_month">/tháng</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="price.plus_cta">Dùng thử 1 tháng miễn phí</a>
+        <p style="font-size:13px;color:var(--muted);margin-top:-14px;margin-bottom:18px;text-align:center" data-i18n="price.plus_note">Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào</p>
         <ul>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            500 sản phẩm · 5 người dùng
+            <span data-i18n="price.plus_li1">500 sản phẩm · 5 người dùng</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH
+            <span data-i18n="price.advanced_report">Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Xuất báo cáo
+            <span data-i18n="price.export_report">Xuất báo cáo</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Xuất/nhập sản phẩm từ Excel
+            <span data-i18n="price.import_export">Xuất/nhập sản phẩm từ Excel</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Lịch sử báo cáo: 6 tháng
+            <span data-i18n="price.plus_li5">Lịch sử báo cáo: 6 tháng</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hỗ trợ: Qua email
+            <span data-i18n="price.plus_li6">Hỗ trợ: Qua email</span>
           </li>
         </ul>
       </div>
 
       <!-- PRO -->
       <div class="plan reveal">
-        <span class="tag">Giá trị nhất</span>
+        <span class="tag" data-i18n="price.best_value_tag">Giá trị nhất</span>
         <h3>Pro</h3>
-        <p class="desc">Không giới hạn mọi tính năng, hỗ trợ ưu tiên.</p>
-        <div class="cost"><span class="n">249.000đ</span><span class="u">/tháng</span></div>
-        <a href="https://shop.vendo.life" class="btn btn-ghost">Nâng cấp ngay</a>
+        <p class="desc" data-i18n="price.pro_desc">Không giới hạn mọi tính năng, hỗ trợ ưu tiên.</p>
+        <div class="cost"><span class="n">249.000đ</span><span class="u" data-i18n="price.per_month">/tháng</span></div>
+        <a href="https://shop.vendo.life" class="btn btn-ghost" data-i18n="price.pro_cta">Nâng cấp ngay</a>
         <ul>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Không giới hạn sản phẩm · Không giới hạn người dùng
+            <span data-i18n="price.pro_li1">Không giới hạn sản phẩm · Không giới hạn người dùng</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH
+            <span data-i18n="price.advanced_report">Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Xuất báo cáo
+            <span data-i18n="price.export_report">Xuất báo cáo</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Xuất/nhập sản phẩm từ Excel
+            <span data-i18n="price.import_export">Xuất/nhập sản phẩm từ Excel</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Lịch sử báo cáo: Không giới hạn
+            <span data-i18n="price.pro_li5">Lịch sử báo cáo: Không giới hạn</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hỗ trợ: Ưu tiên
+            <span data-i18n="price.pro_li6">Hỗ trợ: Ưu tiên</span>
           </li>
         </ul>
       </div>
@@ -952,53 +967,53 @@
 <section class="block faq-section" id="faq" style="background:#fff">
   <div class="wrap">
     <div class="head-center reveal">
-      <span class="eyebrow"><span class="dot"></span>Câu hỏi thường gặp</span>
-      <h2>Bạn thắc mắc, mình giải đáp</h2>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="faq.eyebrow">Câu hỏi thường gặp</span></span>
+      <h2 data-i18n="faq.title">Bạn thắc mắc, mình giải đáp</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Freemium có bị giới hạn thời gian không?
+          <span data-i18n="faq.q1">Freemium có bị giới hạn thời gian không?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-a">
-          <p>Không. Gói Freemium của Vendo <strong>miễn phí mãi mãi</strong> — không có ngày hết hạn. Bạn có thể dùng thoải mái với 50 sản phẩm và 1 nhân viên mà không mất đồng nào. Nâng cấp khi bạn thấy cần, không ai ép.</p>
+          <p data-i18n-html="faq.a1">Không. Gói Freemium của Vendo <strong>miễn phí mãi mãi</strong> — không có ngày hết hạn. Bạn có thể dùng thoải mái với 50 sản phẩm và 1 nhân viên mà không mất đồng nào. Nâng cấp khi bạn thấy cần, không ai ép.</p>
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          1 tháng Plus miễn phí hoạt động thế nào?
+          <span data-i18n="faq.q2">1 tháng Plus miễn phí hoạt động thế nào?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-a">
-          <p>Khi đăng ký tài khoản mới, bạn được tự động kích hoạt gói Plus đầy đủ trong <strong>30 ngày đầu hoàn toàn miễn phí</strong> — không cần nhập thẻ tín dụng. Sau 30 ngày, bạn có thể chọn tiếp tục với Plus (125.000đ/tháng), nâng lên Pro, hoặc dùng tiếp Freemium.</p>
+          <p data-i18n-html="faq.a2">Khi đăng ký tài khoản mới, bạn được tự động kích hoạt gói Plus đầy đủ trong <strong>30 ngày đầu hoàn toàn miễn phí</strong> — không cần nhập thẻ tín dụng. Sau 30 ngày, bạn có thể chọn tiếp tục với Plus (125.000đ/tháng), nâng lên Pro, hoặc dùng tiếp Freemium.</p>
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Dữ liệu có bị mất khi đổi điện thoại không?
+          <span data-i18n="faq.q3">Dữ liệu có bị mất khi đổi điện thoại không?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-a">
-          <p>Không bao giờ. Toàn bộ dữ liệu của bạn được lưu trên cloud và <strong>đồng bộ realtime</strong> giữa tất cả thiết bị. Đổi điện thoại, mở máy tính, hay thêm nhân viên mới — chỉ cần đăng nhập là có đủ dữ liệu ngay lập tức.</p>
+          <p data-i18n-html="faq.a3">Không bao giờ. Toàn bộ dữ liệu của bạn được lưu trên cloud và <strong>đồng bộ realtime</strong> giữa tất cả thiết bị. Đổi điện thoại, mở máy tính, hay thêm nhân viên mới — chỉ cần đăng nhập là có đủ dữ liệu ngay lập tức.</p>
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Vendo chạy trên thiết bị nào?
+          <span data-i18n="faq.q4">Vendo chạy trên thiết bị nào?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-a">
-          <p>Vendo có <strong>app native cho iOS (iPhone/iPad) và Android</strong>, đồng thời có <strong>web app</strong> chạy trên trình duyệt của máy tính — Windows, Mac hay Linux đều được. Dữ liệu đồng bộ realtime giữa tất cả thiết bị.</p>
+          <p data-i18n-html="faq.a4">Vendo có <strong>app native cho iOS (iPhone/iPad) và Android</strong>, đồng thời có <strong>web app</strong> chạy trên trình duyệt của máy tính — Windows, Mac hay Linux đều được. Dữ liệu đồng bộ realtime giữa tất cả thiết bị.</p>
         </div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Nếu muốn hủy gói Plus có dễ không?
+          <span data-i18n="faq.q5">Nếu muốn hủy gói Plus có dễ không?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="faq-a">
-          <p>Rất dễ. Bạn có thể <strong>hủy bất cứ lúc nào</strong> ngay trong phần cài đặt tài khoản, không cần liên hệ hỗ trợ. Sau khi hủy, bạn vẫn dùng Plus đến hết chu kỳ đã trả, rồi tự động về Freemium — dữ liệu vẫn được giữ nguyên.</p>
+          <p data-i18n-html="faq.a5">Rất dễ. Bạn có thể <strong>hủy bất cứ lúc nào</strong> ngay trong phần cài đặt tài khoản, không cần liên hệ hỗ trợ. Sau khi hủy, bạn vẫn dùng Plus đến hết chu kỳ đã trả, rồi tự động về Freemium — dữ liệu vẫn được giữ nguyên.</p>
         </div>
       </div>
     </div>
@@ -1008,10 +1023,10 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="block" style="padding-top:20px">
   <div class="final reveal">
-    <h2>Sẵn sàng bỏ Excel chưa?</h2>
-    <p>Tạo tài khoản Vendo trong 2 phút và quản lý cửa hàng theo cách hiện đại hơn — ngay hôm nay.</p>
-    <a href="https://shop.vendo.life" class="btn">Bắt đầu miễn phí</a>
-    <div class="sub">Miễn phí mãi mãi cho gói cơ bản · Không cần thẻ tín dụng</div>
+    <h2 data-i18n="final.title">Sẵn sàng bỏ Excel chưa?</h2>
+    <p data-i18n="final.sub">Tạo tài khoản Vendo trong 2 phút và quản lý cửa hàng theo cách hiện đại hơn — ngay hôm nay.</p>
+    <a href="https://shop.vendo.life" class="btn" data-i18n="nav.cta">Bắt đầu miễn phí</a>
+    <div class="sub" data-i18n="final.note">Miễn phí mãi mãi cho gói cơ bản · Không cần thẻ tín dụng</div>
   </div>
 </section>
 </main>
@@ -1038,33 +1053,33 @@
             </g></g>
           </svg>
         </a>
-        <p class="blurb">Phần mềm quản lý bán hàng cho chủ shop Việt. Đơn giản, hiện đại, dùng trên cả điện thoại lẫn máy tính.</p>
+        <p class="blurb" data-i18n="footer.blurb">Phần mềm quản lý bán hàng cho chủ shop Việt. Đơn giản, hiện đại, dùng trên cả điện thoại lẫn máy tính.</p>
       </div>
       <div class="foot-col">
-        <h3>Sản phẩm</h3>
-        <a href="#features">Tính năng</a>
-        <a href="#platform">Đa nền tảng</a>
-        <a href="#pricing">Bảng giá</a>
-        <a href="https://shop.vendo.life">Tải app</a>
+        <h3 data-i18n="footer.col1_title">Sản phẩm</h3>
+        <a href="#features" data-i18n="nav.features">Tính năng</a>
+        <a href="#platform" data-i18n="nav.platform">Đa nền tảng</a>
+        <a href="#pricing" data-i18n="nav.pricing">Bảng giá</a>
+        <a href="https://shop.vendo.life" data-i18n="footer.download_app">Tải app</a>
       </div>
       <div class="foot-col">
-        <h3>Hỗ trợ</h3>
-        <a href="#">Hướng dẫn sử dụng</a>
-        <a href="#faq">Câu hỏi thường gặp</a>
-        <a href="#">Liên hệ</a>
-        <a href="#">Cộng đồng</a>
+        <h3 data-i18n="footer.col2_title">Hỗ trợ</h3>
+        <a href="#" data-i18n="footer.guide">Hướng dẫn sử dụng</a>
+        <a href="#faq" data-i18n="footer.faq">Câu hỏi thường gặp</a>
+        <a href="#" data-i18n="footer.contact">Liên hệ</a>
+        <a href="#" data-i18n="footer.community">Cộng đồng</a>
       </div>
       <div class="foot-col">
-        <h3>Công ty</h3>
-        <a href="#">Về Vendo</a>
-        <a href="#">Điều khoản</a>
-        <a href="#">Bảo mật</a>
-        <a href="#">Tuyển dụng</a>
+        <h3 data-i18n="footer.col3_title">Công ty</h3>
+        <a href="#" data-i18n="footer.about">Về Vendo</a>
+        <a href="#" data-i18n="footer.terms">Điều khoản</a>
+        <a href="#" data-i18n="footer.privacy">Bảo mật</a>
+        <a href="#" data-i18n="footer.careers">Tuyển dụng</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Vendo. Mọi quyền được bảo lưu.</span>
-      <span>Made in Vietnam 🇻🇳</span>
+      <span data-i18n="footer.copyright">© 2026 Vendo. Mọi quyền được bảo lưu.</span>
+      <span data-i18n="footer.made_in">Made in Vietnam 🇻🇳</span>
     </div>
   </div>
 </footer>
@@ -1072,22 +1087,208 @@
 <!-- ═══ APP COMING SOON MODAL ═══ -->
 <div class="app-modal-overlay" id="appModal" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
   <div class="app-modal">
-    <button type="button" class="app-modal-close" aria-label="Đóng" onclick="closeAppSoon()">
+    <button type="button" class="app-modal-close" aria-label="Đóng" data-i18n-aria="modal.close_aria" onclick="closeAppSoon()">
       <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="app-modal-icon">
       <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.29 3.86l-8.18 14.18A2 2 0 003.82 21h16.36a2 2 0 001.71-2.96L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <h3 id="appModalTitle">App đang được hoàn thiện</h3>
-    <p id="appModalDesc">Ứng dụng Vendo cho <strong id="appModalPlatform">thiết bị di động</strong> đang trong giai đoạn hoàn thiện và sẽ sớm ra mắt trên <strong id="appModalStore">cửa hàng ứng dụng</strong>. Trong lúc chờ đợi, bạn có thể trải nghiệm đầy đủ tính năng qua bản web ngay trên điện thoại.</p>
+    <h3 id="appModalTitle" data-i18n="modal.title">App đang được hoàn thiện</h3>
+    <p id="appModalDesc"><span data-i18n="modal.desc_part1">Ứng dụng Vendo cho</span> <strong id="appModalPlatform">thiết bị di động</strong> <span data-i18n="modal.desc_part2">đang trong giai đoạn hoàn thiện và sẽ sớm ra mắt trên</span> <strong id="appModalStore">cửa hàng ứng dụng</strong>. <span data-i18n="modal.desc_part3">Trong lúc chờ đợi, bạn có thể trải nghiệm đầy đủ tính năng qua bản web ngay trên điện thoại.</span></p>
     <div class="app-modal-actions">
-      <a href="https://shop.vendo.life" class="btn btn-primary" onclick="closeAppSoon()">Dùng ngay trên web</a>
-      <button type="button" class="btn btn-ghost" onclick="closeAppSoon()">Để sau</button>
+      <a href="https://shop.vendo.life" class="btn btn-primary" onclick="closeAppSoon()" data-i18n="modal.use_web">Dùng ngay trên web</a>
+      <button type="button" class="btn btn-ghost" onclick="closeAppSoon()" data-i18n="modal.later">Để sau</button>
     </div>
   </div>
 </div>
 
 <script>
+  // ═══════════ i18n (VI default / EN) ═══════════
+  const I18N = {
+    vi: {
+      'nav.features':'Tính năng','nav.platform':'Đa nền tảng','nav.testimonials':'Khách hàng','nav.pricing':'Bảng giá','nav.cta':'Bắt đầu miễn phí',
+      'hero.eyebrow':'Phần mềm quản lý bán hàng',
+      'hero.title':'Cả cửa hàng của bạn,<br><span class="hl">gọn trong một app</span>',
+      'hero.lede':'Vendo giúp chủ shop mỹ phẩm, thời trang, tạp hóa… quản lý bán hàng, kho, công nợ và báo cáo — trên cả điện thoại lẫn máy tính. Bỏ Excel, không cần phần mềm cũ rườm rà.',
+      'hero.cta_primary':'Bắt đầu miễn phí','hero.cta_demo':'Xem demo',
+      'hero.badge1':'Freemium miễn phí mãi mãi','hero.badge2':'1 tháng Plus miễn phí','hero.badge3':'Không cần thẻ tín dụng',
+      'hero.dl_on':'Tải trên',
+      'mock.revenue_today':'Doanh thu hôm nay','mock.orders':'Đơn hàng','mock.profit':'Lợi nhuận',
+      'mock.greeting':'Chào buổi sáng,','mock.vs_yesterday':'+24% so với hôm qua','mock.last7days':'7 ngày gần nhất','mock.new_orders':'Đơn mới',
+      'mock.item1':'Son kem lì #07','mock.order1_meta':'vừa xong · ĐH #1042',
+      'mock.item2':'Bộ skincare full','mock.order2_meta':'3 phút · ĐH #1041',
+      'trust.stat1':'Chủ shop đang dùng Vendo','trust.stat2':'Đơn hàng xử lý mỗi tháng','trust.stat3':'Điểm hài lòng trên App Store',
+      'trust.trusted_by':'Được tin dùng bởi shop:','trust.chip1':'Mỹ phẩm','trust.chip2':'Thời trang','trust.chip3':'Tạp hóa','trust.chip4':'Phụ kiện','trust.chip5':'Mẹ & bé',
+      'pain.eyebrow':'Nghe có quen không?','pain.title':'Quản lý bằng Excel quá mệt mỏi',
+      'pain.sub':'Mỗi ngày trôi qua là một lần đau đầu vì sổ sách rối, số liệu lệch và không nắm được tình hình cửa hàng.',
+      'pain.card1_title':'File Excel rối tung','pain.card1_desc':'Mỗi lần tìm một con số là một cực hình, lỡ tay là sai cả bảng.',
+      'pain.card2_title':'Không rõ tồn kho','pain.card2_desc':'Hết hàng mới biết, hàng ế thì chất đống mà chẳng hay.',
+      'pain.card3_title':'Cuối ngày lệch tiền','pain.card3_desc':'Nhân viên ghi tay, đối chiếu thu chi mãi vẫn không khớp.',
+      'pain.card4_title':'Đi vắng là mù tịt','pain.card4_desc':'Rời cửa hàng một buổi là không biết hôm nay bán được bao nhiêu.',
+      'pain.cta_lead':'Có một cách dễ hơn nhiều — <b>Vendo</b>.','pain.cta_btn':'Xem Vendo giải quyết thế nào',
+      'cmp.eyebrow':'So sánh','cmp.title':'Tại sao không chỉ dùng Excel?','cmp.sub':'Excel miễn phí — nhưng chi phí ẩn của nó là thời gian, sai sót và cơ hội bỏ lỡ mỗi ngày.',
+      'cmp.excel_label':'📊 Excel / Sổ tay',
+      'cmp.row1':'Xem doanh thu từ xa (điện thoại)','cmp.row2':'Tồn kho realtime','cmp.row3':'Nhiều nhân viên cùng dùng',
+      'cmp.row4':'Báo cáo công nợ tự động','cmp.row5':'Đồng bộ điện thoại ↔ máy tính','cmp.row6':'Cảnh báo hàng sắp hết',
+      'cmp.cost_label':'Chi phí','cmp.cost_excel':'0đ + thời gian & sai sót','cmp.cost_vendo':'0đ — mãi mãi','cmp.cta':'Bắt đầu miễn phí ngay hôm nay',
+      'feat.eyebrow':'Tính năng','feat.title':'Mọi thứ để vận hành cửa hàng','feat.sub':'Một app duy nhất thay cho cả chục file Excel, cuốn sổ và phần mềm cũ rời rạc.',
+      'feat.f1_title':'Bán hàng nhanh','feat.f1_desc':'Tạo đơn, in hóa đơn, quét mã vạch chỉ trong vài giây — kể cả lúc khách đông.',
+      'feat.f2_title':'Quản lý kho','feat.f2_desc':'Biết chính xác còn bao nhiêu, hàng nào bán chạy, tự cảnh báo khi sắp hết.',
+      'feat.f3_title':'Công nợ rõ ràng','feat.f3_desc':'Theo dõi ai nợ, nợ bao nhiêu, đến hạn tự động nhắc — không bao giờ thất thoát.',
+      'feat.f4_title':'Báo cáo realtime','feat.f4_desc':'Doanh thu, lãi lỗ, hàng bán chạy — cập nhật từng phút, không cần tính tay.',
+      'feat.f5_title':'Quản lý nhân viên','feat.f5_desc':'Phân quyền từng người, theo dõi doanh số, biết ai bán tốt — minh bạch và công bằng.',
+      'feat.f6_title':'Mọi lúc, mọi nơi','feat.f6_desc':'App điện thoại + web máy tính, dữ liệu đồng bộ tức thì. Ở đâu cũng quản được shop.',
+      'dual.eyebrow':'Điện thoại + Máy tính','dual.title':'Điện thoại để bán.<br>Máy tính để quản.',
+      'dual.sub':'Nhân viên bán hàng trên điện thoại, bạn theo dõi toàn bộ trên máy tính. Mọi đơn hàng, mọi thay đổi đồng bộ ngay lập tức giữa các thiết bị.',
+      'dual.li1':'App native cho iOS & Android, mượt và nhanh','dual.li2':'Web app đầy đủ, mở trên mọi trình duyệt','dual.li3':'Đồng bộ thời gian thực, không lo lệch dữ liệu',
+      'testi.eyebrow':'Khách hàng nói gì','testi.title':'Chủ shop tin Vendo','testi.sub':'Hàng nghìn cửa hàng đã chuyển từ Excel sang Vendo và không nhìn lại.',
+      'testi.q1':'Trước mình quản lý bằng 4 file Excel, cuối tháng tính toán muốn xỉu. Dùng Vendo xong nhìn doanh thu ngay trên điện thoại, đi cà phê vẫn nắm được shop.',
+      'testi.name1':'Chị Hương','testi.role1':'Shop mỹ phẩm, Hà Nội',
+      'testi.q2':'Nhân viên bán trên điện thoại, mình ngồi nhà mở máy tính theo dõi. Tồn kho rõ ràng, không còn cảnh hết hàng mới biết. Đáng đồng tiền.',
+      'testi.name2':'Anh Tuấn','testi.role2':'Cửa hàng thời trang, TP.HCM',
+      'testi.q3':'Bắt đầu miễn phí nên mình thử cho yên tâm, ai ngờ dùng quen luôn. Công nợ khách quen giờ rõ ràng từng đồng, không còn ngại đòi nợ.',
+      'testi.name3':'Chị Lan','testi.role3':'Tạp hóa, Đà Nẵng',
+      'price.eyebrow':'Bảng giá','price.title':'Bắt đầu miễn phí, nâng cấp khi cần','price.sub':'Không cần thẻ tín dụng. Không ràng buộc. Dùng thử thoải mái rồi mới quyết định.',
+      'price.free_desc':'Dùng miễn phí, không giới hạn thời gian.','price.free_cost':'Miễn phí',
+      'price.free_li1':'50 sản phẩm · 1 người dùng','price.free_li2':'Báo cáo cơ bản — Công nợ, tồn kho',
+      'price.export_report':'Xuất báo cáo','price.import_export':'Xuất/nhập sản phẩm từ Excel',
+      'price.free_li5':'Lịch sử báo cáo: 30 ngày','price.free_li6':'Hỗ trợ: Cộng đồng',
+      'price.popular_tag':'Phổ biến','price.plus_desc':'Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.',
+      'price.per_month':'/tháng','price.plus_cta':'Dùng thử 1 tháng miễn phí','price.plus_note':'Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào',
+      'price.plus_li1':'500 sản phẩm · 5 người dùng','price.advanced_report':'Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH',
+      'price.plus_li5':'Lịch sử báo cáo: 6 tháng','price.plus_li6':'Hỗ trợ: Qua email',
+      'price.best_value_tag':'Giá trị nhất','price.pro_desc':'Không giới hạn mọi tính năng, hỗ trợ ưu tiên.','price.pro_cta':'Nâng cấp ngay',
+      'price.pro_li1':'Không giới hạn sản phẩm · Không giới hạn người dùng',
+      'price.pro_li5':'Lịch sử báo cáo: Không giới hạn','price.pro_li6':'Hỗ trợ: Ưu tiên',
+      'faq.eyebrow':'Câu hỏi thường gặp','faq.title':'Bạn thắc mắc, mình giải đáp',
+      'faq.q1':'Freemium có bị giới hạn thời gian không?',
+      'faq.a1':'Không. Gói Freemium của Vendo <strong>miễn phí mãi mãi</strong> — không có ngày hết hạn. Bạn có thể dùng thoải mái với 50 sản phẩm và 1 nhân viên mà không mất đồng nào. Nâng cấp khi bạn thấy cần, không ai ép.',
+      'faq.q2':'1 tháng Plus miễn phí hoạt động thế nào?',
+      'faq.a2':'Khi đăng ký tài khoản mới, bạn được tự động kích hoạt gói Plus đầy đủ trong <strong>30 ngày đầu hoàn toàn miễn phí</strong> — không cần nhập thẻ tín dụng. Sau 30 ngày, bạn có thể chọn tiếp tục với Plus (125.000đ/tháng), nâng lên Pro, hoặc dùng tiếp Freemium.',
+      'faq.q3':'Dữ liệu có bị mất khi đổi điện thoại không?',
+      'faq.a3':'Không bao giờ. Toàn bộ dữ liệu của bạn được lưu trên cloud và <strong>đồng bộ realtime</strong> giữa tất cả thiết bị. Đổi điện thoại, mở máy tính, hay thêm nhân viên mới — chỉ cần đăng nhập là có đủ dữ liệu ngay lập tức.',
+      'faq.q4':'Vendo chạy trên thiết bị nào?',
+      'faq.a4':'Vendo có <strong>app native cho iOS (iPhone/iPad) và Android</strong>, đồng thời có <strong>web app</strong> chạy trên trình duyệt của máy tính — Windows, Mac hay Linux đều được. Dữ liệu đồng bộ realtime giữa tất cả thiết bị.',
+      'faq.q5':'Nếu muốn hủy gói Plus có dễ không?',
+      'faq.a5':'Rất dễ. Bạn có thể <strong>hủy bất cứ lúc nào</strong> ngay trong phần cài đặt tài khoản, không cần liên hệ hỗ trợ. Sau khi hủy, bạn vẫn dùng Plus đến hết chu kỳ đã trả, rồi tự động về Freemium — dữ liệu vẫn được giữ nguyên.',
+      'final.title':'Sẵn sàng bỏ Excel chưa?','final.sub':'Tạo tài khoản Vendo trong 2 phút và quản lý cửa hàng theo cách hiện đại hơn — ngay hôm nay.',
+      'final.note':'Miễn phí mãi mãi cho gói cơ bản · Không cần thẻ tín dụng',
+      'footer.blurb':'Phần mềm quản lý bán hàng cho chủ shop Việt. Đơn giản, hiện đại, dùng trên cả điện thoại lẫn máy tính.',
+      'footer.col1_title':'Sản phẩm','footer.download_app':'Tải app',
+      'footer.col2_title':'Hỗ trợ','footer.guide':'Hướng dẫn sử dụng','footer.faq':'Câu hỏi thường gặp','footer.contact':'Liên hệ','footer.community':'Cộng đồng',
+      'footer.col3_title':'Công ty','footer.about':'Về Vendo','footer.terms':'Điều khoản','footer.privacy':'Bảo mật','footer.careers':'Tuyển dụng',
+      'footer.copyright':'© 2026 Vendo. Mọi quyền được bảo lưu.','footer.made_in':'Made in Vietnam 🇻🇳',
+      'modal.close_aria':'Đóng','modal.title':'App đang được hoàn thiện',
+      'modal.desc_part1':'Ứng dụng Vendo cho','modal.desc_part2':'đang trong giai đoạn hoàn thiện và sẽ sớm ra mắt trên','modal.desc_part3':'Trong lúc chờ đợi, bạn có thể trải nghiệm đầy đủ tính năng qua bản web ngay trên điện thoại.',
+      'modal.use_web':'Dùng ngay trên web','modal.later':'Để sau'
+    },
+    en: {
+      'nav.features':'Features','nav.platform':'Cross-platform','nav.testimonials':'Customers','nav.pricing':'Pricing','nav.cta':'Get started free',
+      'hero.eyebrow':'Point-of-sale management software',
+      'hero.title':'Your whole store,<br><span class="hl">in one simple app</span>',
+      'hero.lede':'Vendo helps cosmetics, fashion and grocery shop owners manage sales, inventory, debts and reports — on both phone and computer. Ditch Excel, no more clunky old software.',
+      'hero.cta_primary':'Get started free','hero.cta_demo':'Watch demo',
+      'hero.badge1':'Free forever Freemium plan','hero.badge2':'1 month of Plus for free','hero.badge3':'No credit card required',
+      'hero.dl_on':'Download on',
+      'mock.revenue_today':"Today's revenue",'mock.orders':'Orders','mock.profit':'Profit',
+      'mock.greeting':'Good morning,','mock.vs_yesterday':'+24% vs yesterday','mock.last7days':'Last 7 days','mock.new_orders':'New orders',
+      'mock.item1':'Matte lip cream #07','mock.order1_meta':'just now · Order #1042',
+      'mock.item2':'Full skincare set','mock.order2_meta':'3 min ago · Order #1041',
+      'trust.stat1':'Shop owners using Vendo','trust.stat2':'Orders processed per month','trust.stat3':'App Store rating',
+      'trust.trusted_by':'Trusted by shops in:','trust.chip1':'Cosmetics','trust.chip2':'Fashion','trust.chip3':'Grocery','trust.chip4':'Accessories','trust.chip5':'Mom & baby',
+      'pain.eyebrow':'Sound familiar?','pain.title':'Managing with Excel is exhausting',
+      'pain.sub':'Every day brings another headache — messy spreadsheets, mismatched numbers and no clear view of how your store is doing.',
+      'pain.card1_title':'Messy Excel files','pain.card1_desc':'Finding one number is a chore, and one wrong click ruins the whole sheet.',
+      'pain.card2_title':'No idea about stock','pain.card2_desc':"You find out you're out of stock too late, while slow movers just pile up.",
+      'pain.card3_title':'Cash mismatches at day-end','pain.card3_desc':'Staff jot things down by hand, and reconciling revenue never quite adds up.',
+      'pain.card4_title':"Blind when you're away",'pain.card4_desc':'Step away for one afternoon and you have no idea how much you sold today.',
+      'pain.cta_lead':'There\'s a much easier way — <b>Vendo</b>.','pain.cta_btn':'See how Vendo solves this',
+      'cmp.eyebrow':'Comparison','cmp.title':"Why not just stick with Excel?",'cmp.sub':'Excel is free — but its hidden cost is time, mistakes and missed opportunities every day.',
+      'cmp.excel_label':'📊 Excel / Notebook',
+      'cmp.row1':'Check revenue remotely (on phone)','cmp.row2':'Real-time inventory','cmp.row3':'Multiple staff can use it at once',
+      'cmp.row4':'Automatic debt reports','cmp.row5':'Phone ↔ computer sync','cmp.row6':'Low-stock alerts',
+      'cmp.cost_label':'Cost','cmp.cost_excel':'$0 + time & mistakes','cmp.cost_vendo':'$0 — forever','cmp.cta':'Get started free today',
+      'feat.eyebrow':'Features','feat.title':'Everything to run your store','feat.sub':'One single app replacing a dozen spreadsheets, notebooks and outdated software.',
+      'feat.f1_title':'Fast checkout','feat.f1_desc':'Create orders, print receipts, scan barcodes in seconds — even during rush hour.',
+      'feat.f2_title':'Inventory management','feat.f2_desc':'Know exactly what you have left, what sells best, with automatic low-stock alerts.',
+      'feat.f3_title':'Clear debt tracking','feat.f3_desc':'Track who owes what and get automatic reminders when payments are due — never lose track again.',
+      'feat.f4_title':'Real-time reports','feat.f4_desc':'Revenue, profit/loss, best-sellers — updated every minute, no manual math needed.',
+      'feat.f5_title':'Staff management','feat.f5_desc':'Set permissions per person, track sales performance, see who sells best — fair and transparent.',
+      'feat.f6_title':'Anytime, anywhere','feat.f6_desc':'Mobile app + web app, data synced instantly. Manage your shop from wherever you are.',
+      'dual.eyebrow':'Phone + Computer','dual.title':'Phone to sell.<br>Computer to manage.',
+      'dual.sub':'Staff sell on the phone while you monitor everything from your computer. Every order and every change syncs instantly across devices.',
+      'dual.li1':'Native app for iOS & Android, smooth and fast','dual.li2':'Full-featured web app, works on any browser','dual.li3':'Real-time sync, no more mismatched data',
+      'testi.eyebrow':'What customers say','testi.title':'Shop owners trust Vendo','testi.sub':'Thousands of stores have switched from Excel to Vendo and never looked back.',
+      'testi.q1':"I used to manage everything with 4 Excel files, and month-end calculations nearly drove me crazy. With Vendo I can check revenue right from my phone — even at a coffee shop.",
+      'testi.name1':'Ms. Huong','testi.role1':'Cosmetics shop, Hanoi',
+      'testi.q2':'Staff sell from their phones while I keep an eye on everything from my computer at home. Inventory is crystal clear — no more surprise stockouts. Worth every penny.',
+      'testi.name2':'Mr. Tuan','testi.role2':'Fashion store, Ho Chi Minh City',
+      'testi.q3':"I tried it because it was free to start, and ended up sticking with it. My regular customers' debts are now crystal clear — no more awkward reminders.",
+      'testi.name3':'Ms. Lan','testi.role3':'Grocery store, Da Nang',
+      'price.eyebrow':'Pricing','price.title':'Start free, upgrade when you need to','price.sub':'No credit card required. No commitment. Try it out freely before deciding.',
+      'price.free_desc':'Free to use, no time limit.','price.free_cost':'Free',
+      'price.free_li1':'50 products · 1 user','price.free_li2':'Basic reports — Debt, inventory',
+      'price.export_report':'Export reports','price.import_export':'Import/export products from Excel',
+      'price.free_li5':'Report history: 30 days','price.free_li6':'Support: Community',
+      'price.popular_tag':'Most popular','price.plus_desc':'For growing shops that need reports and data import/export.',
+      'price.per_month':'/month','price.plus_cta':'Try 1 month free','price.plus_note':'Then $5/month · Cancel anytime',
+      'price.plus_li1':'500 products · 5 users','price.advanced_report':'Advanced reports — Revenue, product performance, customer behavior',
+      'price.plus_li5':'Report history: 6 months','price.plus_li6':'Support: Email',
+      'price.best_value_tag':'Best value','price.pro_desc':'Unlimited everything, priority support.','price.pro_cta':'Upgrade now',
+      'price.pro_li1':'Unlimited products · Unlimited users',
+      'price.pro_li5':'Report history: Unlimited','price.pro_li6':'Support: Priority',
+      'faq.eyebrow':'FAQ','faq.title':'Got questions? We have answers',
+      'faq.q1':'Is the Freemium plan time-limited?',
+      'faq.a1':"No. Vendo's Freemium plan is <strong>free forever</strong> — there's no expiration date. You can use it comfortably with 50 products and 1 staff member without paying a thing. Upgrade only when you feel the need to, no pressure.",
+      'faq.q2':'How does the 1 month of free Plus work?',
+      'faq.a2':'When you create a new account, you automatically get the full Plus plan activated for <strong>30 days completely free</strong> — no credit card needed. After 30 days, you can continue with Plus ($5/month), upgrade to Pro, or switch to Freemium.',
+      'faq.q3':'Will I lose data if I switch phones?',
+      'faq.a3':'Never. All your data is stored in the cloud and <strong>synced in real time</strong> across all devices. Switch phones, open your computer, or add a new staff member — just log in and all your data is there instantly.',
+      'faq.q4':'What devices does Vendo run on?',
+      'faq.a4':'Vendo has <strong>native apps for iOS (iPhone/iPad) and Android</strong>, plus a <strong>web app</strong> that runs in any browser — Windows, Mac or Linux. Data syncs in real time across all devices.',
+      'faq.q5':'Is it easy to cancel the Plus plan?',
+      'faq.a5':"Very easy. You can <strong>cancel anytime</strong> right from your account settings, no need to contact support. After cancelling, you keep Plus until the end of your paid cycle, then automatically switch back to Freemium — your data stays intact.",
+      'final.title':'Ready to ditch Excel?','final.sub':'Create your Vendo account in 2 minutes and manage your store in a more modern way — starting today.',
+      'final.note':'Free forever on the basic plan · No credit card required',
+      'footer.blurb':'Sales management software for Vietnamese shop owners. Simple, modern, works on both phone and computer.',
+      'footer.col1_title':'Product','footer.download_app':'Download app',
+      'footer.col2_title':'Support','footer.guide':'User guide','footer.faq':'FAQ','footer.contact':'Contact','footer.community':'Community',
+      'footer.col3_title':'Company','footer.about':'About Vendo','footer.terms':'Terms','footer.privacy':'Privacy','footer.careers':'Careers',
+      'footer.copyright':'© 2026 Vendo. All rights reserved.','footer.made_in':'Made in Vietnam 🇻🇳',
+      'modal.close_aria':'Close','modal.title':'App is still in the works',
+      'modal.desc_part1':'The Vendo app for','modal.desc_part2':'is still being finished and will launch soon on the','modal.desc_part3':'In the meantime, you can use all the features through the web app right on your phone.',
+      'modal.use_web':'Use the web app now','modal.later':'Maybe later'
+    }
+  };
+
+  function applyLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const val = I18N[lang] && I18N[lang][key];
+      if(val !== undefined) el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-html');
+      const val = I18N[lang] && I18N[lang][key];
+      if(val !== undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-aria');
+      const val = I18N[lang] && I18N[lang][key];
+      if(val !== undefined) el.setAttribute('aria-label', val);
+    });
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang === lang));
+  }
+  function setLang(lang){
+    applyLang(lang);
+    try{ localStorage.setItem('vendo_lang', lang); }catch(e){}
+  }
+  (function initLang(){
+    let saved = 'vi';
+    try{ saved = localStorage.getItem('vendo_lang') || 'vi'; }catch(e){}
+    applyLang(saved);
+  })();
 
   // App coming soon modal
   function openAppSoon(platform, store){
