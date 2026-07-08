@@ -200,13 +200,29 @@
   .hbadge-green{background:var(--mint-50);border-color:#00C896;color:var(--mint-d)}
   .hbadge-green svg{color:var(--mint-d)}
   .app-dl{display:flex;gap:12px;flex-wrap:wrap}
-  .dl-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:12px;font-family:inherit;cursor:pointer;transition:.18s;text-decoration:none}
+  .dl-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:12px;font-family:inherit;cursor:pointer;transition:.18s;text-decoration:none;border:0;text-align:left}
   .dl-ios{background:#0C1B33;color:#fff}
   .dl-ios:hover{background:#0C1B33;transform:translateY(-2px)}
   .dl-android{background:#0C1B33;color:#fff}
   .dl-android:hover{background:#0C1B33;transform:translateY(-2px)}
   .dl-sub{font-size:10px;opacity:.75;line-height:1}
   .dl-name{font-size:15px;font-weight:700;line-height:1.2;margin-top:2px}
+
+  /* ---- APP COMING SOON MODAL ---- */
+  .app-modal-overlay{position:fixed;inset:0;background:rgba(12,27,51,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:200;opacity:0;visibility:hidden;transition:opacity .2s ease}
+  .app-modal-overlay.open{opacity:1;visibility:visible}
+  .app-modal{background:var(--surface);border-radius:var(--r-lg);max-width:380px;width:100%;padding:30px 26px 26px;box-shadow:var(--shadow-lg);text-align:center;transform:translateY(12px) scale(.97);transition:transform .22s ease}
+  .app-modal-overlay.open .app-modal{transform:translateY(0) scale(1)}
+  .app-modal-icon{width:56px;height:56px;border-radius:16px;background:var(--blue-50);color:var(--blue);display:grid;place-items:center;margin:0 auto 18px}
+  .app-modal-icon svg{width:28px;height:28px}
+  .app-modal h3{font-size:19px;font-weight:800;margin-bottom:10px}
+  .app-modal p{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin-bottom:22px}
+  .app-modal p strong{color:var(--ink)}
+  .app-modal-actions{display:flex;flex-direction:column;gap:10px}
+  .app-modal-actions .btn{width:100%}
+  .app-modal-close{position:absolute;top:14px;right:14px;background:none;border:0;cursor:pointer;color:var(--muted);padding:6px;line-height:0;border-radius:8px}
+  .app-modal-close:hover{color:var(--ink);background:var(--bg)}
+  .app-modal{position:relative}
   /* ---- NAV ---- */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(245,248,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.25s}
   header.nav.scrolled{background:rgba(255,255,255,.9);border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
@@ -538,14 +554,14 @@
         <span class="hbadge"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Không cần thẻ tín dụng</span>
       </div>
       <div class="app-dl">
-        <a href="https://shop.vendo.life" class="dl-btn dl-ios">
+        <button type="button" class="dl-btn dl-ios" onclick="openAppSoon('iOS','App Store')">
           <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.3.05-2.28-1.32-3.12-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           <div><div class="dl-sub">Tải trên</div><div class="dl-name">App Store</div></div>
-        </a>
-        <a href="https://shop.vendo.life" class="dl-btn dl-android">
+        </button>
+        <button type="button" class="dl-btn dl-android" onclick="openAppSoon('Android','Google Play')">
           <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.523 15.341a.66.66 0 01-.66.66H7.137a.66.66 0 01-.66-.66V8.66c0-.364.296-.66.66-.66h9.726c.364 0 .66.296.66.66v6.681zM6.477 6a.5.5 0 01.5-.5h10.046a.5.5 0 01.5.5v.5H6.477V6zM4 9.5a1 1 0 011-1h.477v5H5a1 1 0 01-1-1v-3zm15 0v3a1 1 0 01-1 1h-.477v-5H18a1 1 0 011 1zM8.5 18a.5.5 0 01.5-.5h.5v-2h-.5a.5.5 0 010-1H15a.5.5 0 010 1h-.5v2h.5a.5.5 0 010 1h-6a.5.5 0 01-.5-.5z"/></svg>
           <div><div class="dl-sub">Tải trên</div><div class="dl-name">Google Play</div></div>
-        </a>
+        </button>
       </div>
     </div>
 
@@ -1053,7 +1069,44 @@
   </div>
 </footer>
 
+<!-- ═══ APP COMING SOON MODAL ═══ -->
+<div class="app-modal-overlay" id="appModal" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+  <div class="app-modal">
+    <button type="button" class="app-modal-close" aria-label="Đóng" onclick="closeAppSoon()">
+      <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="app-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.29 3.86l-8.18 14.18A2 2 0 003.82 21h16.36a2 2 0 001.71-2.96L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 id="appModalTitle">App đang được hoàn thiện</h3>
+    <p id="appModalDesc">Ứng dụng Vendo cho <strong id="appModalPlatform">thiết bị di động</strong> đang trong giai đoạn hoàn thiện và sẽ sớm ra mắt trên <strong id="appModalStore">cửa hàng ứng dụng</strong>. Trong lúc chờ đợi, bạn có thể trải nghiệm đầy đủ tính năng qua bản web ngay trên điện thoại.</p>
+    <div class="app-modal-actions">
+      <a href="https://shop.vendo.life" class="btn btn-primary" onclick="closeAppSoon()">Dùng ngay trên web</a>
+      <button type="button" class="btn btn-ghost" onclick="closeAppSoon()">Để sau</button>
+    </div>
+  </div>
+</div>
+
 <script>
+
+  // App coming soon modal
+  function openAppSoon(platform, store){
+    document.getElementById('appModalPlatform').textContent = platform;
+    document.getElementById('appModalStore').textContent = store;
+    const overlay = document.getElementById('appModal');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAppSoon(){
+    document.getElementById('appModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('appModal').addEventListener('click', (e)=>{
+    if(e.target.id === 'appModal') closeAppSoon();
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeAppSoon();
+  });
 
   // FAQ accordion
   function toggleFaq(btn){
