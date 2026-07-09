@@ -380,6 +380,12 @@
 
   /* ---- PRICING ---- */
   .price{background:linear-gradient(180deg,#fff,var(--bg))}
+  .price-toggle{display:flex;justify-content:center;margin:0 0 40px}
+  .pt-track{position:relative;display:flex;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+  .pt-btn{position:relative;z-index:1;font-family:inherit;font-size:14px;font-weight:700;padding:9px 20px;border-radius:999px;border:0;background:none;color:var(--muted);cursor:pointer;transition:.2s;display:flex;align-items:center;gap:7px;white-space:nowrap}
+  .pt-btn.active{background:var(--blue-d);color:#fff}
+  .pt-badge{font-size:11px;font-weight:800;background:var(--mint-d);color:#fff;padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+  .pt-btn.active .pt-badge{background:rgba(255,255,255,.25)}
   .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
   .plan{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:34px 30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
   .plan.pop{border-color:var(--blue);box-shadow:0 24px 56px rgba(0,122,255,.18);position:relative;transform:scale(1.03)}
@@ -390,6 +396,11 @@
   .plan .cost .n{font-size:40px;font-weight:800;letter-spacing:-.03em}
   .plan .cost .u{font-size:15px;color:var(--muted)}
   .plan .btn{width:100%;margin:20px 0 24px}
+  .plan .cost-note{font-size:13px;color:var(--muted);margin-top:-14px;margin-bottom:18px;text-align:center}
+  .plan .btn+.cost-note{margin-top:-14px}
+  .year-only{display:none}
+  .billing-year .year-only{display:block}
+  .billing-year .month-only{display:none}
   .plan ul{list-style:none;display:flex;flex-direction:column;gap:13px}
   .plan li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink-2)}
   .plan li svg{width:19px;height:19px;color:var(--mint-d);flex:none;margin-top:1px}
@@ -851,7 +862,18 @@
       <h2 data-i18n="price.title">Bắt đầu miễn phí, nâng cấp khi cần</h2>
       <p data-i18n="price.sub">Không cần thẻ tín dụng. Không ràng buộc. Dùng thử thoải mái rồi mới quyết định.</p>
     </div>
-    <div class="price-grid">
+
+    <div class="price-toggle reveal">
+      <div class="pt-track" role="group" aria-label="Chọn kỳ thanh toán">
+        <button type="button" class="pt-btn active" data-billing="month" onclick="setBilling('month')" data-i18n="price.toggle_month">Theo tháng</button>
+        <button type="button" class="pt-btn" data-billing="year" onclick="setBilling('year')">
+          <span data-i18n="price.toggle_year">Theo năm</span>
+          <span class="pt-badge" data-i18n="price.toggle_save">Giảm 17%</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="price-grid" id="priceGrid">
 
       <!-- FREEMIUM -->
       <div class="plan reveal">
@@ -892,9 +914,14 @@
         <span class="tag" data-i18n="price.popular_tag">Phổ biến</span>
         <h3>Plus</h3>
         <p class="desc" data-i18n="price.plus_desc">Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.</p>
-        <div class="cost"><span class="n">125.000đ</span><span class="u" data-i18n="price.per_month">/tháng</span></div>
+        <div class="cost">
+          <span class="n month-only">125.000đ</span><span class="u month-only" data-i18n="price.per_month">/tháng</span>
+          <span class="n year-only">1.250.000đ</span><span class="u year-only" data-i18n="price.per_year">/năm</span>
+        </div>
+        <p class="cost-note year-only" data-i18n="price.plus_year_equiv">Tương đương 104.000đ/tháng</p>
         <a href="https://shop.vendo.life" class="btn btn-primary" data-i18n="price.plus_cta">Dùng thử 1 tháng miễn phí</a>
-        <p style="font-size:13px;color:var(--muted);margin-top:-14px;margin-bottom:18px;text-align:center" data-i18n="price.plus_note">Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào</p>
+        <p class="cost-note month-only" data-i18n="price.plus_note">Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào</p>
+        <p class="cost-note year-only" data-i18n="price.plus_note_year">Thanh toán 1.250.000đ/năm · Huỷ bất cứ lúc nào</p>
         <ul>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -928,8 +955,13 @@
         <span class="tag" data-i18n="price.best_value_tag">Giá trị nhất</span>
         <h3>Pro</h3>
         <p class="desc" data-i18n="price.pro_desc">Không giới hạn mọi tính năng, hỗ trợ ưu tiên.</p>
-        <div class="cost"><span class="n">249.000đ</span><span class="u" data-i18n="price.per_month">/tháng</span></div>
+        <div class="cost">
+          <span class="n month-only">249.000đ</span><span class="u month-only" data-i18n="price.per_month">/tháng</span>
+          <span class="n year-only">2.490.000đ</span><span class="u year-only" data-i18n="price.per_year">/năm</span>
+        </div>
+        <p class="cost-note year-only" data-i18n="price.pro_year_equiv">Tương đương 207.500đ/tháng</p>
         <a href="https://shop.vendo.life" class="btn btn-ghost" data-i18n="price.pro_cta">Nâng cấp ngay</a>
+        <p class="cost-note year-only" data-i18n="price.pro_note_year">Thanh toán 2.490.000đ/năm · Huỷ bất cứ lúc nào</p>
         <ul>
           <li>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1154,10 +1186,13 @@
       'price.export_report':'Xuất báo cáo','price.import_export':'Xuất/nhập sản phẩm từ Excel',
       'price.free_li5':'Lịch sử báo cáo: 30 ngày','price.free_li6':'Hỗ trợ: Cộng đồng',
       'price.popular_tag':'Phổ biến','price.plus_desc':'Cho shop đang lớn, cần báo cáo và xuất nhập dữ liệu.',
-      'price.per_month':'/tháng','price.plus_cta':'Dùng thử 1 tháng miễn phí','price.plus_note':'Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào',
+      'price.per_month':'/tháng','price.per_year':'/năm','price.plus_cta':'Dùng thử 1 tháng miễn phí','price.plus_note':'Sau đó 125.000đ/tháng · Huỷ bất cứ lúc nào',
+      'price.plus_note_year':'Thanh toán 1.250.000đ/năm · Huỷ bất cứ lúc nào','price.plus_year_equiv':'Tương đương 104.000đ/tháng',
+      'price.toggle_month':'Theo tháng','price.toggle_year':'Theo năm','price.toggle_save':'Giảm 17%',
       'price.plus_li1':'500 sản phẩm · 5 người dùng','price.advanced_report':'Báo cáo nâng cao — Doanh thu, hiệu quả SP, hành vi KH',
       'price.plus_li5':'Lịch sử báo cáo: 6 tháng','price.plus_li6':'Hỗ trợ: Qua email',
       'price.best_value_tag':'Giá trị nhất','price.pro_desc':'Không giới hạn mọi tính năng, hỗ trợ ưu tiên.','price.pro_cta':'Nâng cấp ngay',
+      'price.pro_note_year':'Thanh toán 2.490.000đ/năm · Huỷ bất cứ lúc nào','price.pro_year_equiv':'Tương đương 207.500đ/tháng',
       'price.pro_li1':'Không giới hạn sản phẩm · Không giới hạn người dùng',
       'price.pro_li5':'Lịch sử báo cáo: Không giới hạn','price.pro_li6':'Hỗ trợ: Ưu tiên',
       'faq.eyebrow':'Câu hỏi thường gặp','faq.title':'Bạn thắc mắc, mình giải đáp',
@@ -1231,10 +1266,13 @@
       'price.export_report':'Export reports','price.import_export':'Import/export products from Excel',
       'price.free_li5':'Report history: 30 days','price.free_li6':'Support: Community',
       'price.popular_tag':'Most popular','price.plus_desc':'For growing shops that need reports and data import/export.',
-      'price.per_month':'/month','price.plus_cta':'Try 1 month free','price.plus_note':'Then $5/month · Cancel anytime',
+      'price.per_month':'/month','price.per_year':'/year','price.plus_cta':'Try 1 month free','price.plus_note':'Then $5/month · Cancel anytime',
+      'price.plus_note_year':'Billed $50/year · Cancel anytime','price.plus_year_equiv':'Equivalent to $4.15/month',
+      'price.toggle_month':'Monthly','price.toggle_year':'Yearly','price.toggle_save':'Save 17%',
       'price.plus_li1':'500 products · 5 users','price.advanced_report':'Advanced reports — Revenue, product performance, customer behavior',
       'price.plus_li5':'Report history: 6 months','price.plus_li6':'Support: Email',
       'price.best_value_tag':'Best value','price.pro_desc':'Unlimited everything, priority support.','price.pro_cta':'Upgrade now',
+      'price.pro_note_year':'Billed $100/year · Cancel anytime','price.pro_year_equiv':'Equivalent to $8.30/month',
       'price.pro_li1':'Unlimited products · Unlimited users',
       'price.pro_li5':'Report history: Unlimited','price.pro_li6':'Support: Priority',
       'faq.eyebrow':'FAQ','faq.title':'Got questions? We have answers',
@@ -1289,6 +1327,13 @@
     try{ saved = localStorage.getItem('vendo_lang') || 'vi'; }catch(e){}
     applyLang(saved);
   })();
+
+  // ═══════════ Pricing billing toggle (month / year) ═══════════
+  function setBilling(period){
+    const grid = document.getElementById('priceGrid');
+    grid.classList.toggle('billing-year', period === 'year');
+    document.querySelectorAll('.pt-btn').forEach(b=>b.classList.toggle('active', b.dataset.billing === period));
+  }
 
   // App coming soon modal
   function openAppSoon(platform, store){
